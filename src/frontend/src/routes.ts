@@ -4,6 +4,7 @@ import {
   flexibleRoomIdPattern,
 } from '@/features/rooms'
 import { HomeRoute } from '@/features/home'
+import { RasaMarketingRoute } from '@/features/rasa'
 import { LegalTermsRoute } from '@/features/legalsTerms/LegalTermsRoute'
 import { AccessibilityRoute } from '@/features/legalsTerms/Accessibility'
 import { TermsOfServiceRoute } from '@/features/legalsTerms/TermsOfService'
@@ -15,6 +16,7 @@ const roomIdRegex = new RegExp(`^[/](?<roomId>${flexibleRoomIdPattern})$`)
 
 export const routes: Record<
   | 'home'
+  | 'meet'
   | 'room'
   | 'feedback'
   | 'legalTerms'
@@ -34,6 +36,11 @@ export const routes: Record<
   home: {
     name: 'home',
     path: '/',
+    Component: RasaMarketingRoute,
+  },
+  meet: {
+    name: 'meet',
+    path: '/meet',
     Component: HomeRoute,
   },
   room: {
