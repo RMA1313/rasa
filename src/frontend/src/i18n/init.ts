@@ -20,7 +20,9 @@ i18n
     fallbackLng,
     ns: i18nDefaultNamespace,
     detection: {
-      order: ['localStorage', 'navigator'],
+      // Keep persisted user choice, but do not auto-pick the browser locale
+      // so first-time visitors land on the Rasa default language.
+      order: ['localStorage'],
       caches: ['localStorage'],
     },
     interpolation: {

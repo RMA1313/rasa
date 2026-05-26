@@ -109,16 +109,6 @@ const RightColumn = ({ children }: { children?: ReactNode }) => {
   )
 }
 
-const Separator = styled('div', {
-  base: {
-    borderBottom: '1px solid',
-    borderColor: 'greyscale.500',
-    marginTop: '2.5rem',
-    maxWidth: '30rem',
-    width: '100%',
-  },
-})
-
 const Heading = styled('h1', {
   base: {
     fontWeight: '700',
