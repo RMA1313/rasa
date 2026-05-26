@@ -11,7 +11,7 @@ type ShortcutRowProps = {
 }
 
 const shortcutCellStyle = css({
-  textAlign: 'right',
+  textAlign: 'end',
 })
 
 export const ShortcutRow: React.FC<ShortcutRowProps> = ({ descriptor }) => {

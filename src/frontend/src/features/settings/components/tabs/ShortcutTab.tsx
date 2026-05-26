@@ -11,11 +11,11 @@ const tableStyle = css({
   '& caption': {
     fontWeight: 'bold',
     marginBottom: '0.75rem',
-    textAlign: 'left',
+    textAlign: 'start',
   },
   '& th, & td': {
     padding: '0.65rem 0',
-    textAlign: 'left',
+    textAlign: 'start',
     fontWeight: 'normal',
   },
   '& tbody tr': {

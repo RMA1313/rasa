@@ -44,12 +44,14 @@ export const WaitingParticipantListItem = ({
           })}
         >
           <span
+            dir="auto"
             className={css({
               whiteSpace: 'nowrap',
               overflow: 'hidden',
               textOverflow: 'ellipsis',
               width: '100%',
               display: 'block',
+              unicodeBidi: 'plaintext',
             })}
           >
             {participant.username}

@@ -127,12 +127,14 @@ export const ParticipantListItem = ({
             })}
           >
             <span
+              dir="auto"
               className={css({
                 whiteSpace: 'nowrap',
                 overflow: 'hidden',
                 textOverflow: 'ellipsis',
                 maxWidth: '120px',
                 display: 'block',
+                unicodeBidi: 'plaintext',
               })}
             >
               {name}
@@ -140,7 +142,7 @@ export const ParticipantListItem = ({
             {isLocal(participant) && (
               <span
                 className={css({
-                  marginLeft: '.25rem',
+                  marginInlineStart: '.25rem',
                   whiteSpace: 'nowrap',
                 })}
               >

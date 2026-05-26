@@ -79,6 +79,7 @@ export const ChatInput = ({
     >
       <TextArea
         ref={inputRef}
+        dir="auto"
         onKeyDown={(e) => {
           e.stopPropagation()
           submitOnEnter(e)
@@ -98,6 +99,7 @@ export const ChatInput = ({
           lineHeight: 1.25,
           padding: '7px 10px',
           overflowY: 'hidden',
+          unicodeBidi: 'plaintext',
         }}
         placeholderStyle={'strong'}
         spellCheck={false}

@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import { getRouteUrl } from '@/navigation/getRouteUrl'
-import { Div, Button, type DialogProps, P, Bold } from '@/primitives'
+import { Div, Button, type DialogProps, P, Bold, LtrText } from '@/primitives'
 import { HStack, styled, VStack } from '@/styled-system/jsx'
 import { Heading, Dialog } from 'react-aria-components'
 import { Text, text } from '@/primitives/Text'
@@ -62,7 +62,7 @@ export const InviteDialog = (props: Omit<DialogProps, 'title'>) => {
     <StyledRACDialog {...props}>
       {({ close }) => (
         <VStack
-          alignItems="left"
+          alignItems="start"
           justify="start"
           gap={0}
           style={{ maxWidth: '100%', overflow: 'visible' }}
@@ -70,7 +70,7 @@ export const InviteDialog = (props: Omit<DialogProps, 'title'>) => {
           <Heading slot="title" level={2} className={text({ variant: 'h2' })}>
             {t('heading')}
           </Heading>
-          <Div position="absolute" top="5" right="5">
+          <Div position="absolute" top="5" insetInlineEnd="5">
             <Button
               invisible
               variant="tertiaryText"
@@ -104,7 +104,7 @@ export const InviteDialog = (props: Omit<DialogProps, 'title'>) => {
                 })}
               >
                 <Text as="p" wrap="pretty">
-                  {roomUrl?.replace(/^https?:\/\//, '')}
+                  <LtrText>{roomUrl?.replace(/^https?:\/\//, '')}</LtrText>
                 </Text>
                 {isTelephonyReadyForUse && roomUrl && (
                   <Button
@@ -130,12 +130,13 @@ export const InviteDialog = (props: Omit<DialogProps, 'title'>) => {
                 })}
               >
                 <Text as="p" wrap="pretty">
-                  <Bold>{t('phone.call')}</Bold> ({telephony?.country}){' '}
-                  {telephony?.internationalPhoneNumber}
+                  <Bold>{t('phone.call')}</Bold> (
+                  <LtrText>{telephony?.country}</LtrText>){' '}
+                  <LtrText>{telephony?.internationalPhoneNumber}</LtrText>
                 </Text>
                 <Text as="p" wrap="pretty">
                   <Bold>{t('phone.pinCode')}</Bold>{' '}
-                  {formatPinCode(roomData?.pin_code)}
+                  <LtrText>{formatPinCode(roomData?.pin_code)}</LtrText>
                 </Text>
               </div>
 
@@ -150,11 +151,11 @@ export const InviteDialog = (props: Omit<DialogProps, 'title'>) => {
                 onPress={copyRoomToClipboard}
                 data-attr="share-dialog-copy"
               >
-                {isCopied ? (
+                    {isCopied ? (
                   <>
                     <RiCheckLine
                       size={18}
-                      style={{ marginRight: '8px' }}
+                      style={{ marginInlineEnd: '8px' }}
                       aria-hidden="true"
                     />
                     {t('copied')}
@@ -162,7 +163,7 @@ export const InviteDialog = (props: Omit<DialogProps, 'title'>) => {
                 ) : (
                   <>
                     <RiFileCopyLine
-                      style={{ marginRight: '6px', minWidth: '18px' }}
+                      style={{ marginInlineEnd: '6px', minWidth: '18px' }}
                       aria-hidden="true"
                     />
                     {t('copy')}
@@ -180,12 +181,12 @@ export const InviteDialog = (props: Omit<DialogProps, 'title'>) => {
             >
               {isCopied ? (
                 <>
-                  <RiCheckLine size={24} style={{ marginRight: '8px' }} />
+                  <RiCheckLine size={24} style={{ marginInlineEnd: '8px' }} />
                   {t('copied')}
                 </>
               ) : (
                 <>
-                  <RiFileCopyLine size={24} style={{ marginRight: '8px' }} />
+                  <RiFileCopyLine size={24} style={{ marginInlineEnd: '8px' }} />
                   {t('copyUrl')}
                 </>
               )}

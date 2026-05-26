@@ -16,6 +16,8 @@ const badgeStyle = css({
   whiteSpace: 'nowrap',
   minWidth: '5.5rem',
   textAlign: 'center',
+  direction: 'ltr',
+  unicodeBidi: 'plaintext',
 })
 
 export const ShortcutBadge: React.FC<ShortcutBadgeProps> = ({
@@ -25,7 +27,7 @@ export const ShortcutBadge: React.FC<ShortcutBadgeProps> = ({
 }) => {
   return (
     <>
-      <kbd className={cx(badgeStyle, className)} aria-hidden="true">
+      <kbd dir="ltr" className={cx(badgeStyle, className)} aria-hidden="true">
         {visualLabel}
       </kbd>
       {srLabel && <span className="sr-only">{srLabel}</span>}

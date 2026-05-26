@@ -77,7 +77,7 @@ export const AccountTab = ({ id, onOpenChange }: AccountTabProps) => {
       <HStack
         className={css({
           marginTop: 'auto',
-          marginLeft: 'auto',
+          marginInlineStart: 'auto',
         })}
       >
         <Button variant="secondary" onPress={handleOnCancel}>

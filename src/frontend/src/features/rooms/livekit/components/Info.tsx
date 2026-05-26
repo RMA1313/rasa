@@ -3,7 +3,7 @@ import { useMemo } from 'react'
 import { VStack } from '@/styled-system/jsx'
 import { css } from '@/styled-system/css'
 import { RiCheckLine, RiFileCopyLine } from '@remixicon/react'
-import { Bold, Button, Div, Text } from '@/primitives'
+import { Bold, Button, Div, LtrText, Text } from '@/primitives'
 import { getRouteUrl } from '@/navigation/getRouteUrl'
 import { useRoomData } from '../hooks/useRoomData'
 import { formatPinCode } from '../../utils/telephony'
@@ -49,19 +49,20 @@ export const Info = () => {
             display: 'flex',
             flexDirection: 'column',
           })}
-        >
+          >
           <Text as="p" variant="xsNote" wrap="pretty">
-            {roomUrl.replace(/^https?:\/\//, '')}
+            <LtrText>{roomUrl.replace(/^https?:\/\//, '')}</LtrText>
           </Text>
           {isTelephonyReadyForUse && (
             <>
               <Text as="p" variant="xsNote" wrap="pretty">
                 <Bold>{t('roomInformation.phone.call')}</Bold> (
-                {telephony?.country}) {telephony?.internationalPhoneNumber}
+                <LtrText>{telephony?.country}</LtrText>){' '}
+                <LtrText>{telephony?.internationalPhoneNumber}</LtrText>
               </Text>
               <Text as="p" variant="xsNote" wrap="pretty">
                 <Bold>{t('roomInformation.phone.pinCode')}</Bold>{' '}
-                {formatPinCode(data?.pin_code)}
+                <LtrText>{formatPinCode(data?.pin_code)}</LtrText>
               </Text>
             </>
           )}
@@ -73,14 +74,14 @@ export const Info = () => {
           onPress={copyRoomToClipboard}
           data-attr="copy-info-sidepannel"
           style={{
-            marginLeft: '-8px',
+            marginInlineStart: '-8px',
           }}
         >
           {isCopied ? (
             <>
               <RiCheckLine
                 size={24}
-                style={{ marginRight: '6px' }}
+                style={{ marginInlineEnd: '6px' }}
                 aria-hidden="true"
               />
               {t('roomInformation.button.copied')}
@@ -89,7 +90,7 @@ export const Info = () => {
             <>
               <RiFileCopyLine
                 size={24}
-                style={{ marginRight: '6px' }}
+                style={{ marginInlineEnd: '6px' }}
                 aria-hidden="true"
               />
               {t('roomInformation.button.copy')}

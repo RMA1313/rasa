@@ -12,12 +12,14 @@ import {
   ScreenRecordingSidePanel,
 } from '@/features/recording'
 import { useConfig } from '@/api/useConfig'
+import { getLanguageDirection } from '@/i18n/direction'
 
 export interface ToolsButtonProps {
   icon: ReactNode
   title: string
   description: string
   onPress: () => void
+  isRtl: boolean
 }
 
 const ToolButton = ({
@@ -25,6 +27,7 @@ const ToolButton = ({
   title,
   description,
   onPress,
+  isRtl,
 }: ToolsButtonProps) => {
   return (
     <RACButton
@@ -51,7 +54,7 @@ const ToolButton = ({
           height: '40px',
           minWidth: '40px',
           borderRadius: '25px',
-          marginRight: '0.75rem',
+          marginInlineEnd: '0.75rem',
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
@@ -80,14 +83,18 @@ const ToolButton = ({
       </div>
       <div
         className={css({
-          marginLeft: 'auto',
+          marginInlineStart: 'auto',
           height: '100%',
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
         })}
       >
-        <Icon type="symbols" name="chevron_forward" />
+        <Icon
+          type="symbols"
+          name="chevron_forward"
+          style={{ transform: isRtl ? 'scaleX(-1)' : undefined }}
+        />
       </div>
     </RACButton>
   )
@@ -97,7 +104,8 @@ export const Tools = () => {
   const { data } = useConfig()
   const { openTranscript, openScreenRecording, activeSubPanelId, isToolsOpen } =
     useSidePanel()
-  const { t } = useTranslation('rooms', { keyPrefix: 'moreTools' })
+  const { t, i18n } = useTranslation('rooms', { keyPrefix: 'moreTools' })
+  const isRtl = getLanguageDirection(i18n.language) === 'rtl'
 
   // Restore focus to the element that opened the Tools panel
   // following the same pattern as Chat.
@@ -172,6 +180,7 @@ export const Tools = () => {
           title={t('tools.transcript.title')}
           description={t('tools.transcript.body')}
           onPress={() => openTranscript()}
+          isRtl={isRtl}
         />
       )}
       {isScreenRecordingEnabled && (
@@ -180,6 +189,7 @@ export const Tools = () => {
           title={t('tools.screenRecording.title')}
           description={t('tools.screenRecording.body')}
           onPress={() => openScreenRecording()}
+          isRtl={isRtl}
         />
       )}
     </Div>

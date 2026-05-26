@@ -7,6 +7,7 @@ const badge = cva({
     backgroundColor: 'primary.subtle',
     color: 'primary.subtle-text',
     borderRadius: '6',
+    unicodeBidi: 'plaintext',
   },
   variants: {
     size: {
@@ -25,5 +26,5 @@ export type BadgeProps = React.HTMLAttributes<HTMLSpanElement> &
   RecipeVariantProps<typeof badge>
 
 export const Badge = ({ size, ...props }: BadgeProps) => {
-  return <span {...props} className={badge({ size })} />
+  return <span dir="auto" {...props} className={badge({ size })} />
 }

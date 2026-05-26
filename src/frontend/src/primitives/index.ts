@@ -7,6 +7,7 @@
 export { A } from './A'
 export { Badge } from './Badge'
 export { Bold } from './Bold'
+export { LtrText } from './BidiText'
 export { Box } from './Box'
 export { Button } from './Button'
 export { LinkButton } from './LinkButton'
