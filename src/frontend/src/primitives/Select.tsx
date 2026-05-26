@@ -84,7 +84,7 @@ const StyledSelectValue = styled(SelectValue, {
 
 const StyledIcon = styled('div', {
   base: {
-    marginRight: '0.35rem',
+    marginInlineEnd: '0.35rem',
     flexShrink: 0,
   },
 })

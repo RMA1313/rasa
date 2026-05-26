@@ -34,7 +34,7 @@ const LoginHint = () => {
       className={css({
         position: 'absolute',
         top: '103px',
-        right: '110px',
+        insetInlineEnd: '110px',
         zIndex: '100',
         outline: 'none',
         padding: '1.25rem',
@@ -48,15 +48,15 @@ const LoginHint = () => {
         },
         sm: {
           top: '131px',
-          right: '100px',
+          insetInlineEnd: '100px',
           zIndex: '100',
         },
         _after: {
           content: '""',
           position: 'absolute',
           top: '-10px',
-          right: '20%',
-          marginLeft: '-10px',
+          insetInlineEnd: '20%',
+          marginInlineEnd: '-10px',
           borderWidth: '0 10px 10px 10px',
           borderStyle: 'solid',
           borderColor: 'transparent transparent #E3E3FB transparent',
@@ -73,7 +73,7 @@ const LoginHint = () => {
         aria-label={t('loginHint.button.ariaLabel')}
         size="sm"
         className={css({
-          marginLeft: 'auto',
+          marginInlineStart: 'auto',
         })}
         onPress={() => closeLoginHint()}
       >

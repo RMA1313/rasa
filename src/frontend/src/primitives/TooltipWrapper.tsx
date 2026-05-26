@@ -68,11 +68,11 @@ const StyledTooltip = styled(RACTooltip, {
       '--origin': 'translateY(-4px)',
     },
     '&[data-placement=right]': {
-      marginLeft: 'var(--sizes-tooltip-spacing)',
+      marginInlineStart: 'var(--sizes-tooltip-spacing)',
       '--origin': 'translateX(-4px)',
     },
     '&[data-placement=left]': {
-      marginRight: 'var(--sizes-tooltip-spacing)',
+      marginInlineEnd: 'var(--sizes-tooltip-spacing)',
       '--origin': 'translateX(4px)',
     },
     '& .react-aria-OverlayArrow svg': {

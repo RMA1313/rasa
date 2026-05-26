@@ -39,10 +39,10 @@ const tabsStyle = css({
 const tabListContainerStyle = css({
   display: 'flex',
   flexDirection: 'column',
-  borderRight: '1px solid lightGray', // fixme poor color management
+  borderInlineEnd: '1px solid lightGray', // fixme poor color management
   paddingY: '1rem',
-  paddingLeft: '0.2rem',
-  paddingRight: '1.5rem',
+  paddingInlineStart: '0.2rem',
+  paddingInlineEnd: '1.5rem',
 })
 
 const tabPanelContainerStyle = css({
@@ -80,7 +80,7 @@ export const SettingsDialogExtended = (props: SettingsDialogExtended) => {
           style={{
             flex: isWideScreen ? '0 0 16rem' : undefined,
             paddingTop: !isWideScreen ? '64px' : undefined,
-            paddingRight: !isWideScreen ? '1rem' : undefined,
+            paddingInlineEnd: !isWideScreen ? '1rem' : undefined,
           }}
         >
           {isWideScreen && (

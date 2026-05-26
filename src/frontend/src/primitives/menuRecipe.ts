@@ -7,7 +7,7 @@ export const menuRecipe = sva({
     item: {
       paddingY: 0.125,
       paddingX: 0.5,
-      textAlign: 'left',
+      textAlign: 'start',
       width: 'full',
       borderRadius: 4,
       cursor: 'pointer',
@@ -19,7 +19,7 @@ export const menuRecipe = sva({
           content: '"✓"',
           position: 'absolute',
           top: '2px',
-          left: '6px',
+          insetInlineStart: '6px',
         },
       },
       '&[data-focused]': {
@@ -55,7 +55,7 @@ export const menuRecipe = sva({
     extraPadding: {
       true: {
         item: {
-          paddingLeft: 1.5,
+          paddingInlineStart: 1.5,
         },
       },
     },

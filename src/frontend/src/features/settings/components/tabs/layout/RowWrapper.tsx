@@ -60,7 +60,7 @@ export const RowWrapper = ({ heading, children, beta }: RowWrapperProps) => {
             width: '10rem',
             justifyContent: 'center',
             display: 'flex',
-            paddingLeft: '1.5rem',
+            paddingInlineStart: '1.5rem',
           }}
         >
           {children[1]}
