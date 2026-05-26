@@ -1,0 +1,61 @@
+{
+  "backToHome": "بازگشت به صفحه اصلی",
+  "cancel": "لغو",
+  "closeDialog": "بستن پنجره",
+  "error": {
+    "heading": "هنگام بارگذاری صفحه خطایی رخ داد"
+  },
+  "feedback": {
+    "context": "بازخورد شما به بهبود محصول کمک می‌کند!",
+    "cta": "بازخورد خود را ثبت کنید - تب جدید"
+  },
+  "forbidden": {
+    "heading": "شما اجازه مشاهده این صفحه را ندارید"
+  },
+  "loading": "در حال بارگذاری…",
+  "loggedInUserTooltip": "واردشده با حساب ",
+  "login": {
+    "buttonLabel": "ورود",
+    "proconnectButtonLabel": "ورود با ProConnect",
+    "proconnectLinkLabel": "ProConnect چیست؟ - تب جدید",
+    "proconnectLink": "ProConnect چیست؟"
+  },
+  "logout": "خروج",
+  "notFound": {
+    "heading": "کد جلسه خود را بررسی کنید",
+    "body": "مطمئن شوید کد جلسه را به‌درستی در URL وارد کرده‌اید. نمونه:"
+  },
+  "selected": "انتخاب‌شده",
+  "submit": "تأیید",
+  "footer": {
+    "links": {
+      "legifrance": "legifrance.gouv.fr",
+      "infogouv": "info.gouv.fr",
+      "servicepublic": "service-public.fr",
+      "datagouv": "data.gouv.fr",
+      "legalsTerms": "اطلاعیه حقوقی",
+      "data": "داده‌های شخصی و کوکی‌ها",
+      "accessibility": "دسترسی‌پذیری: ناسازگار",
+      "ariaLabel": "پنجره جدید",
+      "codeAnnotation": "کد ما متن‌باز است و در این",
+      "code": "مخزن کد متن‌باز",
+      "technicalDetails": "اطلاعیه فنی",
+      "termsOfService": "شرایط استفاده"
+    },
+    "mentions": "مگر در مواردی که خلاف آن ذکر شده باشد، محتوای این سایت تحت",
+    "license": "مجوز Etalab 2.0"
+  },
+  "loginHint": {
+    "title": "با حساب خود وارد شوید",
+    "body": "به‌جای انتظار، با حساب خود وارد شوید.",
+    "button": {
+      "ariaLabel": "بستن پیشنهاد",
+      "label": "باشه"
+    }
+  },
+  "skipLink": "پرش به محتوای اصلی",
+  "clipboardContent": {
+    "url": "برای پیوستن به کنفرانس ویدیویی، روی این لینک کلیک کنید: {{roomUrl}}",
+    "numberAndPin": "برای پیوستن با تلفن، شماره {{phoneNumber}} را بگیرید و این کد را وارد کنید: {{pinCode}}"
+  }
+}
