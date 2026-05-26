@@ -19,6 +19,10 @@ html.font-opendyslexic {
   --fonts-sans: OpenDyslexic, ui-sans-serif, system-ui, sans-serif;
 }
 
+html[dir='rtl'] {
+  --fonts-sans: 'Vazirmatn', Tahoma, 'Segoe UI', Arial, sans-serif;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
