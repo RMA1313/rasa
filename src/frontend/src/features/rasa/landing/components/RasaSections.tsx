@@ -1,55 +1,103 @@
+import { useEffect, useState } from 'react'
 import {
   RiArrowDownSLine,
-  RiMenuLine,
-  RiCheckboxCircleFill,
+  RiCheckLine,
+  RiCloudLine,
   RiFileTextLine,
-  RiGithubFill,
   RiGlobalLine,
   RiGroupLine,
-  RiLinkedinBoxFill,
   RiLockLine,
   RiMailFill,
+  RiMenuLine,
   RiMicLine,
+  RiPhoneLine,
   RiRecordCircleLine,
   RiShieldCheckLine,
   RiShieldKeyholeLine,
   RiSparklingLine,
+  RiSpeedLine,
+  RiServerLine,
   RiVidiconLine,
+  RiWifiOffLine,
+  RiDatabase2Line,
+  RiUserSettingsLine,
+  RiSettings3Line,
+  RiLinksLine,
+  RiLayoutGridLine,
 } from '@remixicon/react'
 import { RasaLocale, rasaContent } from '../content'
-import { useState } from 'react'
-
-type RasaContent = (typeof rasaContent)[RasaLocale]
 
 type Props = {
   locale: RasaLocale
-  content: RasaContent
+  content: (typeof rasaContent)[RasaLocale]
   onLocaleChange: () => void
 }
 
-const capabilityIcons = [
+const navTargets = ['#product', '#capabilities', '#security', '#deployment', '#pricing', '#resources']
+
+const featureIcons = [
   RiVidiconLine,
-  RiGlobalLine,
-  RiSparklingLine,
+  RiGroupLine,
+  RiShieldCheckLine,
+  RiServerLine,
+  RiLockLine,
+  RiPhoneLine,
+  RiWifiOffLine,
+  RiCloudLine,
+  RiUserSettingsLine,
+  RiSettings3Line,
+  RiLayoutGridLine,
+  RiLinksLine,
+  RiShieldKeyholeLine,
+  RiDatabase2Line,
+  RiSpeedLine,
   RiRecordCircleLine,
   RiFileTextLine,
-  RiGroupLine,
-  RiLockLine,
   RiGlobalLine,
 ]
 
-const navTargets = [
-  '#product',
-  '#capabilities',
-  '#security',
-  '#deployment',
-  '#pricing',
-  '#resources',
-]
+const badgeIcons = [RiShieldCheckLine, RiSparklingLine, RiServerLine, RiSpeedLine, RiLockLine]
 
 export const RasaSections = ({ locale, content, onLocaleChange }: Props) => {
   const isFa = locale === 'fa'
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [activeSection, setActiveSection] = useState('product')
+  const [activeTab, setActiveTab] = useState(0)
+
+  useEffect(() => {
+    const observers = navTargets
+      .map((target) => target.slice(1))
+      .map((id) => document.getElementById(id))
+      .filter(Boolean)
+      .map((element) => {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                setActiveSection(entry.target.id)
+              }
+            })
+          },
+          { rootMargin: '-35% 0px -50% 0px', threshold: 0.1 }
+        )
+        observer.observe(element as Element)
+        return observer
+      })
+
+    return () => observers.forEach((observer) => observer.disconnect())
+  }, [])
+
+  useEffect(() => {
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setMobileMenuOpen(false)
+    }
+    window.addEventListener('keydown', closeOnEscape)
+    return () => window.removeEventListener('keydown', closeOnEscape)
+  }, [])
+
+  useEffect(() => {
+    setMobileMenuOpen(false)
+  }, [locale])
 
   return (
     <div className="rasa-page" dir={content.dir} data-locale={locale}>
@@ -63,7 +111,11 @@ export const RasaSections = ({ locale, content, onLocaleChange }: Props) => {
           </a>
           <div className="rasa-nav-links" aria-label="Primary">
             {content.nav.map((item, index) => (
-              <a href={navTargets[index]} key={item}>
+              <a
+                href={navTargets[index]}
+                key={item}
+                className={activeSection === navTargets[index].slice(1) ? 'is-active' : ''}
+              >
                 {item}
               </a>
             ))}
@@ -76,9 +128,7 @@ export const RasaSections = ({ locale, content, onLocaleChange }: Props) => {
               className="rasa-language"
               onClick={onLocaleChange}
               type="button"
-              aria-label={
-                isFa ? 'Switch language to English' : 'تغییر زبان به فارسی'
-              }
+              aria-label={isFa ? 'Switch language to English' : 'تغییر زبان به فارسی'}
             >
               <span aria-hidden="true">{isFa ? 'FA' : 'EN'}</span>
               <RiArrowDownSLine size={16} aria-hidden="true" />
@@ -110,23 +160,18 @@ export const RasaSections = ({ locale, content, onLocaleChange }: Props) => {
       <header className="rasa-hero" id="product">
         <div className="rasa-orbits" aria-hidden="true" />
         <div className="rasa-hero-copy">
+          <span className="rasa-badge">{content.badge}</span>
           <h1>
             <span className="rasa-headline-line">{content.headline[0]}</span>
             <span className="rasa-headline-line">{content.headline[1]}</span>
           </h1>
           <p>{content.lead}</p>
           <div className="rasa-hero-buttons">
-            <a
-              className="rasa-btn rasa-btn-primary rasa-btn-large"
-              href="/meet"
-            >
+            <a className="rasa-btn rasa-btn-primary rasa-btn-large" href="/meet">
               {content.primary}
               <RiVidiconLine size={20} aria-hidden="true" />
             </a>
-            <a
-              className="rasa-btn rasa-btn-ghost rasa-btn-large"
-              href="#deployment"
-            >
+            <a className="rasa-btn rasa-btn-ghost rasa-btn-large" href="#deployment">
               {content.secondary}
               <RiSparklingLine size={19} aria-hidden="true" />
             </a>
@@ -135,9 +180,7 @@ export const RasaSections = ({ locale, content, onLocaleChange }: Props) => {
             {content.trust.map((item, index) => (
               <span key={item}>
                 {index === 0 && <span className="rasa-mini-badge">HD</span>}
-                {index === 1 && (
-                  <RiShieldCheckLine size={16} aria-hidden="true" />
-                )}
+                {index === 1 && <RiShieldCheckLine size={16} aria-hidden="true" />}
                 {index === 2 && (
                   <span className="rasa-bolt" aria-hidden="true">
                     ↯
@@ -154,15 +197,26 @@ export const RasaSections = ({ locale, content, onLocaleChange }: Props) => {
       </header>
 
       <section className="rasa-section rasa-trust-section" id="security">
-        <h2>{content.trustTitle}</h2>
-        <div className="rasa-card-row">
-          {content.cards.map((card, index) => (
+        <span className="rasa-eyebrow">{content.trustTitle}</span>
+        <h2>{content.trustTitle2}</h2>
+        <p className="rasa-section-lead">{content.trustSubtitle}</p>
+        <p className="rasa-section-body">{content.trustText2}</p>
+        <div className="rasa-card-grid rasa-trust-grid">
+          {content.trustCards.map((card, index) => (
             <article className="rasa-trust-card" key={card.title}>
-              <IconShell index={index} />
-              <div>
+              <div className="rasa-trust-card-head">
+                <IconShell index={index} />
                 <h3>{card.title}</h3>
-                <p>{card.text}</p>
               </div>
+              <p>{card.text}</p>
+              <ul className="rasa-bullet-list">
+                {card.bullets.map((bullet) => (
+                  <li key={bullet}>
+                    <RiCheckLine size={14} aria-hidden="true" />
+                    <span>{bullet}</span>
+                  </li>
+                ))}
+              </ul>
             </article>
           ))}
         </div>
@@ -172,67 +226,121 @@ export const RasaSections = ({ locale, content, onLocaleChange }: Props) => {
         <span className="rasa-eyebrow">{content.capabilitiesEyebrow}</span>
         <h2>{content.capabilitiesTitle}</h2>
         <p>{content.capabilitiesText}</p>
-        <div className="rasa-cap-grid">
-          {content.capabilities.map((item, index) => {
-            const Icon = capabilityIcons[index]
+        <div className="rasa-feature-tabs" role="tablist" aria-label={content.capabilitiesTitle}>
+          {content.capabilityGroups.map((group, index) => (
+            <button
+              key={group.title}
+              type="button"
+              role="tab"
+              className={activeTab === index ? 'is-active' : ''}
+              aria-selected={activeTab === index}
+              onClick={() => setActiveTab(index)}
+            >
+              {group.title}
+            </button>
+          ))}
+        </div>
+        <div className="rasa-tab-panels">
+          {content.capabilityGroups.map((group, index) => (
+            <div
+              key={group.title}
+              role="tabpanel"
+              hidden={activeTab !== index}
+              className="rasa-feature-panel"
+            >
+              <div className="rasa-card-grid rasa-feature-grid">
+                {group.items.map((item, itemIndex) => {
+                  const Icon = featureIcons[(index * 6 + itemIndex) % featureIcons.length]
+                  return (
+                    <article className="rasa-feature-card" key={item.title}>
+                      <Icon size={22} aria-hidden="true" />
+                      <div>
+                        <h3>{item.title}</h3>
+                        <p>{item.description}</p>
+                      </div>
+                    </article>
+                  )
+                })}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="rasa-tech-trust" id="deployment">
+        <div className="rasa-tech-trust-copy">
+          <span className="rasa-eyebrow">{content.trustTitle2}</span>
+          <h2>{content.trustTitle2}</h2>
+          <p>{content.trustText2}</p>
+        </div>
+        <div className="rasa-tech-mockup" aria-hidden="true">
+          <div className="rasa-tech-mockup-header">
+            <RiServerLine size={18} />
+            <span>Enterprise control plane</span>
+          </div>
+          <div className="rasa-tech-mockup-grid">
+            <div>
+              <RiShieldKeyholeLine size={20} />
+              <span>Security</span>
+            </div>
+            <div>
+              <RiLinksLine size={20} />
+              <span>API</span>
+            </div>
+            <div>
+              <RiLayoutGridLine size={20} />
+              <span>Scale</span>
+            </div>
+            <div>
+              <RiDatabase2Line size={20} />
+              <span>Data</span>
+            </div>
+          </div>
+          <div className="rasa-tech-mockup-badges">
+          {content.trustBadges.slice(0, 4).map((badge, index) => {
+            const Icon = badgeIcons[index]
             return (
-              <article className="rasa-cap-card" key={item}>
-                <Icon size={34} aria-hidden="true" />
-                <span>{item}</span>
-              </article>
+              <span key={badge}>
+                <span className="rasa-badge-icon" aria-hidden="true">
+                  <Icon size={14} aria-hidden="true" />
+                </span>
+                {badge}
+              </span>
+            )
+          })}
+          </div>
+        </div>
+        <div className="rasa-badge-row">
+          {content.trustBadges.map((badge, index) => {
+            const Icon = badgeIcons[index % badgeIcons.length]
+            return (
+              <span key={badge}>
+                <Icon size={14} aria-hidden="true" />
+                {badge}
+              </span>
             )
           })}
         </div>
       </section>
 
-      <section className="rasa-infra" id="deployment">
-        <div className="rasa-infra-art" aria-hidden="true">
-          <span className="rasa-tech rasa-tech-kube">Kubernetes</span>
-          <span className="rasa-tech rasa-tech-docker">Docker</span>
-          <span className="rasa-tech rasa-tech-lock">
-            <RiLockLine size={28} aria-hidden="true" />
-          </span>
-          <div className="rasa-server">
-            <span />
-            <span />
-            <span />
-          </div>
-          <i />
-        </div>
-        <div className="rasa-infra-copy">
-          <h2>{content.infraTitle}</h2>
-          <p>{content.infraText}</p>
-          <ul>
-            {content.infraBullets.map((item) => (
-              <li key={item}>
-                <RiCheckboxCircleFill size={20} aria-hidden="true" />
-                {item}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
       <section className="rasa-cta" id="pricing">
-        <div>
+        <div className="rasa-cta-copy">
           <span>{content.ctaReady}</span>
-          <h2>
-            {content.ctaTitle[0]}
-            <br />
-            {content.ctaTitle[1]}
-          </h2>
+          <h2>{content.ctaReady}</h2>
+          <p>{content.ctaText}</p>
         </div>
         <div className="rasa-cta-actions">
           <a className="rasa-btn rasa-btn-primary rasa-btn-large" href="/meet">
-            {content.primary}
+            {content.primaryCta}
             <RiVidiconLine size={19} aria-hidden="true" />
           </a>
-          <a
-            className="rasa-btn rasa-btn-ghost rasa-btn-large"
-            href="#deployment"
-          >
-            {content.request}
+          <a className="rasa-btn rasa-btn-ghost rasa-btn-large" href="#deployment">
+            {content.secondaryCta}
             <RiSparklingLine size={18} aria-hidden="true" />
+          </a>
+          <a className="rasa-btn rasa-btn-ghost rasa-btn-large" href="#resources">
+            {content.tertiaryCta}
+            <RiFileTextLine size={18} aria-hidden="true" />
           </a>
         </div>
       </section>
@@ -264,15 +372,11 @@ export const RasaSections = ({ locale, content, onLocaleChange }: Props) => {
           </div>
           <div className="rasa-footer-social">
             <div>
-              <RiGithubFill size={24} aria-hidden="true" />
               <RiMailFill size={24} aria-hidden="true" />
-              <RiLinkedinBoxFill size={24} aria-hidden="true" />
+              <RiGlobalLine size={24} aria-hidden="true" />
+              <RiGroupLine size={24} aria-hidden="true" />
             </div>
-            <button
-              className="rasa-country"
-              type="button"
-              aria-label="Country selector"
-            >
+            <button className="rasa-country" type="button" aria-label="Country selector">
               <span aria-hidden="true">🇮🇷</span>
               {content.country}
               <RiArrowDownSLine size={16} aria-hidden="true" />
@@ -286,11 +390,11 @@ export const RasaSections = ({ locale, content, onLocaleChange }: Props) => {
 }
 
 const IconShell = ({ index }: { index: number }) => {
-  const icons = [RiShieldKeyholeLine, RiSparklingLine, RiGlobalLine]
+  const icons = [RiShieldKeyholeLine, RiSparklingLine, RiServerLine, RiPhoneLine]
   const Icon = icons[index]
   return (
     <div className={`rasa-icon-shell rasa-icon-${index}`}>
-      <Icon size={48} />
+      <Icon size={28} />
     </div>
   )
 }
@@ -332,13 +436,11 @@ const ProductMockup = () => (
         </div>
       </div>
       <div className="rasa-controls">
-        {[RiMicLine, RiVidiconLine, RiGlobalLine, RiSparklingLine].map(
-          (Icon, i) => (
-            <button type="button" key={i}>
-              <Icon size={19} aria-hidden="true" />
-            </button>
-          )
-        )}
+        {[RiMicLine, RiVidiconLine, RiGlobalLine, RiSparklingLine].map((Icon, i) => (
+          <button type="button" key={i}>
+            <Icon size={19} aria-hidden="true" />
+          </button>
+        ))}
         <button className="rasa-end" type="button">
           <RiVidiconLine size={18} aria-hidden="true" />
         </button>
@@ -371,9 +473,7 @@ const VideoTile = ({
   tone: string
   large?: boolean
 }) => (
-  <div
-    className={`rasa-video-tile rasa-video-${tone} ${large ? 'is-large' : ''}`}
-  >
+  <div className={`rasa-video-tile rasa-video-${tone} ${large ? 'is-large' : ''}`}>
     <div className="rasa-avatar-face">
       <span />
       <i />
