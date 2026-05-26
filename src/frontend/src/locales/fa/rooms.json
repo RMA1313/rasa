@@ -1,709 +1,709 @@
 {
   "feedback": {
     "heading": {
-      "normal": "You have left the meeting",
-      "duplicateIdentity": "You have joined the meeting from another device",
-      "participantRemoved": "You have been removed from the meeting by a host"
+      "normal": "شما از جلسه خارج شدید",
+      "duplicateIdentity": "شما از دستگاه دیگری به جلسه پیوسته‌اید",
+      "participantRemoved": "شما توسط میزبان از جلسه حذف شدید"
     },
-    "home": "Return to home",
-    "back": "Rejoin the meeting"
+    "home": "بازگشت به صفحه اصلی",
+    "back": "پیوستن دوباره به جلسه"
   },
   "selectDevice": {
-    "loading": "Loading…",
-    "select": "Select a value",
-    "permissionsNeeded": "Permission needed",
+    "loading": "در حال بارگذاری…",
+    "select": "یک مقدار انتخاب کنید",
+    "permissionsNeeded": "مجوز لازم است",
     "settings": {
-      "audio": "Audio settings",
-      "video": "Video settings"
+      "audio": "تنظیمات صدا",
+      "video": "تنظیمات ویدیو"
     },
-    "effects": "Backgrounds and Effects",
+    "effects": "پس‌زمینه‌ها و افکت‌ها",
     "videoinput": {
-      "choose": "Select camera",
-      "permissionsNeeded": "Select camera - permission needed",
-      "disable": "Disable camera",
-      "enable": "Enable camera",
-      "turnedOff": "Camera turned off",
-      "turnedOn": "Camera turned on",
-      "label": "Camera",
-      "placeholder": "Enable camera to see the preview"
+      "choose": "دوربین را انتخاب کنید",
+      "permissionsNeeded": "انتخاب دوربین - مجوز لازم است",
+      "disable": "غیرفعال کردن دوربین",
+      "enable": "فعال کردن دوربین",
+      "turnedOff": "دوربین خاموش شد",
+      "turnedOn": "دوربین روشن شد",
+      "label": "دوربین",
+      "placeholder": "برای دیدن پیش‌نمایش، دوربین را فعال کنید"
     },
     "audioinput": {
-      "choose": "Select microphone",
-      "permissionsNeeded": "Select microphone - permission needed",
-      "disable": "Disable microphone",
-      "enable": "Enable microphone",
-      "turnedOff": "Microphone turned off",
-      "turnedOn": "Microphone turned on",
-      "label": "Microphone"
+      "choose": "میکروفون را انتخاب کنید",
+      "permissionsNeeded": "انتخاب میکروفون - مجوز لازم است",
+      "disable": "غیرفعال کردن میکروفون",
+      "enable": "فعال کردن میکروفون",
+      "turnedOff": "میکروفون خاموش شد",
+      "turnedOn": "میکروفون روشن شد",
+      "label": "میکروفون"
     },
     "audiooutput": {
-      "choose": "Select speaker",
-      "permissionsNeeded": "Select speaker - permission needed"
+      "choose": "بلندگو را انتخاب کنید",
+      "permissionsNeeded": "انتخاب بلندگو - مجوز لازم است"
     }
   },
   "join": {
     "effects": {
-      "description": "Apply backgrounds and effects",
-      "title": "Effects",
-      "subTitle": "Configure your camera's effects."
+      "description": "اعمال پس‌زمینه‌ها و افکت‌ها",
+      "title": "افکت‌ها",
+      "subTitle": "افکت‌های دوربین خود را تنظیم کنید."
     },
-    "heading": "Join the meeting?",
-    "joinLabel": "Join",
-    "joinMeeting": "Join meeting",
-    "toggleOff": "Click to turn off",
-    "toggleOn": "Click to turn on",
-    "usernameHint": "Shown to other participants",
-    "usernameLabel": "Your name",
+    "heading": "به جلسه بپیوندید؟",
+    "joinLabel": "پیوستن",
+    "joinMeeting": "پیوستن به جلسه",
+    "toggleOff": "برای خاموش کردن کلیک کنید",
+    "toggleOn": "برای روشن کردن کلیک کنید",
+    "usernameHint": "برای سایر شرکت‌کنندگان نمایش داده می‌شود",
+    "usernameLabel": "نام شما",
     "errors": {
-      "usernameEmpty": "Your name cannot be empty"
+      "usernameEmpty": "نام شما نمی‌تواند خالی باشد"
     },
-    "cameraDisabled": "Camera is disabled.",
-    "cameraStarting": "Camera is starting…",
-    "cameraNotGranted": "Would you like others to be able to see you during the meeting?",
-    "cameraAndMicNotGranted": "Would you like others to be able to see and hear you during the meeting?",
+    "cameraDisabled": "دوربین غیرفعال است.",
+    "cameraStarting": "دوربین در حال راه‌اندازی است…",
+    "cameraNotGranted": "آیا می‌خواهید دیگران بتوانند شما را در طول جلسه ببینند؟",
+    "cameraAndMicNotGranted": "آیا می‌خواهید دیگران بتوانند شما را در طول جلسه ببینند و بشنوند؟",
     "permissionsButton": {
-      "cameraAndMicNotGranted": "Allow access to camera and microphone",
-      "cameraNotGranted": "Allow access to camera"
+      "cameraAndMicNotGranted": "اجازه دسترسی به دوربین و میکروفون",
+      "cameraNotGranted": "اجازه دسترسی به دوربین"
     },
     "videoPreview": {
-      "enabled": "Video preview enabled",
-      "disabled": "Video preview disabled"
+      "enabled": "پیش‌نمایش ویدیو فعال است",
+      "disabled": "پیش‌نمایش ویدیو غیرفعال است"
     },
     "waiting": {
-      "title": "Requesting to join...",
-      "body": "You will be able to join this call when someone authorizes you"
+      "title": "در حال درخواست برای پیوستن...",
+      "body": "وقتی کسی درخواست شما را تأیید کند، می‌توانید به این تماس بپیوندید"
     },
     "denied": {
-      "title": "You cannot join this call",
-      "body": "Your request to join has been denied."
+      "title": "نمی‌توانید به این تماس بپیوندید",
+      "body": "درخواست شما برای پیوستن رد شده است."
     },
     "timeoutInvite": {
-      "title": "You cannot join this call",
-      "body": "No one responded to your request"
+      "title": "نمی‌توانید به این تماس بپیوندید",
+      "body": "هیچ‌کس به درخواست شما پاسخ نداد"
     }
   },
-  "leaveRoomPrompt": "This will make you leave the meeting.",
+  "leaveRoomPrompt": "با این کار از جلسه خارج می‌شوید.",
   "shareDialog": {
-    "copy": "Copy information",
-    "copyUrl": "Copy link",
-    "copied": "Information copied to clipboard",
-    "heading": "Your meeting is ready",
-    "description": "Share this link with people you want to invite to the meeting.",
-    "permissions": "People with this link do not need your permission to join this meeting.",
-    "closeDialog": "Close dialog",
+    "copy": "کپی اطلاعات",
+    "copyUrl": "کپی لینک",
+    "copied": "اطلاعات در حافظه موقت کپی شد",
+    "heading": "جلسه شما آماده است",
+    "description": "این لینک را با افرادی که می‌خواهید به جلسه دعوت کنید به اشتراک بگذارید.",
+    "permissions": "افرادی که این لینک را دارند برای پیوستن به جلسه به اجازه شما نیاز ندارند.",
+    "closeDialog": "بستن پنجره",
     "phone": {
-      "call": "Call:",
-      "pinCode": "Code:"
+      "call": "تماس:",
+      "pinCode": "کد:"
     }
   },
   "pagination": {
-    "count": "{{currentPage}} of {{totalPageCount}}",
-    "next": "next page",
-    "previous": "previous page"
+    "count": "{{currentPage}} از {{totalPageCount}}",
+    "next": "صفحه بعد",
+    "previous": "صفحه قبل"
   },
   "mediaErrorDialog": {
     "DeviceInUse": {
       "title": {
-        "audioinput": "Microphone Activation Failed",
-        "videoinput": "Camera Activation Failed"
+        "audioinput": "فعال‌سازی میکروفون ناموفق بود",
+        "videoinput": "فعال‌سازی دوربین ناموفق بود"
       },
       "body": {
-        "audioinput": "Your microphone is already in use by another tab or application, which prevents it from being activated in this video call. If you wish, close the other tab or application to use it here.",
-        "videoinput": "Your camera is already in use by another tab or application, which prevents it from being activated in this video call. If you wish, close the other tab or application to use it here."
+        "audioinput": "میکروفون شما هم‌اکنون توسط یک تب یا برنامه دیگر در حال استفاده است و بنابراین نمی‌تواند در این تماس ویدیویی فعال شود. اگر خواستید، آن تب یا برنامه دیگر را ببندید تا اینجا از آن استفاده کنید.",
+        "videoinput": "دوربین شما هم‌اکنون توسط یک تب یا برنامه دیگر در حال استفاده است و بنابراین نمی‌تواند در این تماس ویدیویی فعال شود. اگر خواستید، آن تب یا برنامه دیگر را ببندید تا اینجا از آن استفاده کنید."
       }
     },
-    "close": "OK"
+    "close": "باشه"
   },
   "permissionErrorDialog": {
     "heading": {
-      "camera": "{{appTitle}} is not allowed to use your camera",
-      "microphone": "{{appTitle}} is not allowed to use your microphone",
-      "cameraAndMicrophone": "{{appTitle}} is not allowed to use your microphone or camera",
-      "default": "{{appTitle}} is not allowed to use certain permissions"
+      "camera": "{{appTitle}} اجازه استفاده از دوربین شما را ندارد",
+      "microphone": "{{appTitle}} اجازه استفاده از میکروفون شما را ندارد",
+      "cameraAndMicrophone": "{{appTitle}} اجازه استفاده از میکروفون یا دوربین شما را ندارد",
+      "default": "{{appTitle}} اجازه استفاده از برخی مجوزها را ندارد"
     },
     "body": {
       "openMenu": {
-        "others": "Click on the settings icon ICON_PLACEHOLDER in your browser’s address bar",
-        "safari": "Click the 'Safari' menu, and open 'Settings for {{appDomain}}'."
+        "others": "روی آیکن تنظیمات ICON_PLACEHOLDER در نوار آدرس مرورگر خود کلیک کنید",
+        "safari": "روی منوی «Safari» کلیک کنید و «Settings for {{appDomain}}» را باز کنید."
       },
       "details": {
-        "camera": "Allow access to the camera",
-        "microphone": "Allow access to the microphone",
-        "cameraAndMicrophone": "Allow access to the camera and microphone",
-        "default": "Enable the necessary permissions."
+        "camera": "اجازه دسترسی به دوربین",
+        "microphone": "اجازه دسترسی به میکروفون",
+        "cameraAndMicrophone": "اجازه دسترسی به دوربین و میکروفون",
+        "default": "مجوزهای لازم را فعال کنید."
       }
     }
   },
   "permissionsButton": {
-    "tooltip": "More info",
-    "ariaLabel": "Permissions issue. Show more info"
+    "tooltip": "اطلاعات بیشتر",
+    "ariaLabel": "مشکل مجوز. اطلاعات بیشتر را نشان دهید"
   },
   "error": {
     "createRoom": {
-      "heading": "Authentication Required",
-      "body": "This room has not been created yet. Please authenticate to create it or wait for an authenticated user to do so."
+      "heading": "احراز هویت لازم است",
+      "body": "این اتاق هنوز ایجاد نشده است. لطفاً برای ایجاد آن احراز هویت کنید یا منتظر بمانید تا یک کاربر احراز هویت‌شده آن را ایجاد کند."
     },
     "screenShare": {
-      "title": "Unable to share your screen",
-      "ariaLabel": "Unable to share your screen",
-      "message": "Your browser may not be allowed to record the screen on your computer.",
-      "macInstructions": "Go to your",
+      "title": "امکان اشتراک‌گذاری صفحه وجود ندارد",
+      "ariaLabel": "امکان اشتراک‌گذاری صفحه وجود ندارد",
+      "message": "ممکن است مرورگر شما اجازه ضبط صفحه نمایش روی رایانه‌تان را نداشته باشد.",
+      "macInstructions": "به این بخش بروید:",
       "macSystemPreferences": "System Preferences",
-      "helpLinkText": "To learn more, see",
-      "helpLinkLabel": "Presentation issue",
-      "closeButton": "Dismiss",
-      "newTab": "New window"
+      "helpLinkText": "برای اطلاعات بیشتر، ببینید",
+      "helpLinkLabel": "مشکل ارائه",
+      "closeButton": "بستن",
+      "newTab": "پنجره جدید"
     }
   },
   "isIdleDisconnectModal": {
-    "title": "Are you still there?",
-    "body": "You are the only participant. This call will end in {{duration}}. Would you like to continue the call?",
-    "settingsPrefix": "To stop seeing this message, go to",
-    "settingsLink": "Settings > General",
+    "title": "هنوز آنجا هستید؟",
+    "body": "شما تنها شرکت‌کننده هستید. این تماس تا {{duration}} دیگر پایان می‌یابد. آیا می‌خواهید تماس را ادامه دهید؟",
+    "settingsPrefix": "برای اینکه دیگر این پیام را نبینید، به این بخش بروید:",
+    "settingsLink": "تنظیمات > عمومی",
     "settingsSuffix": ".",
-    "stayButton": "Continue the call",
-    "leaveButton": "Leave now",
-    "countdownAnnouncement": "Call ends in {{duration}}."
+    "stayButton": "ادامه تماس",
+    "leaveButton": "خروج اکنون",
+    "countdownAnnouncement": "تماس تا {{duration}} دیگر پایان می‌یابد."
   },
   "controls": {
-    "region": "Call controls",
-    "microphone": "Microphone",
-    "camera": "Camera",
+    "region": "کنترل‌های تماس",
+    "microphone": "میکروفون",
+    "camera": "دوربین",
     "chat": {
-      "open": "Close the chat",
-      "closed": "Open the chat",
+      "open": "بستن چت",
+      "closed": "باز کردن چت",
       "input": {
         "textArea": {
-          "label": "Enter a message",
-          "placeholder": "Enter a message"
+          "label": "پیام را وارد کنید",
+          "placeholder": "پیام را وارد کنید"
         },
         "button": {
-          "label": "Send message"
+          "label": "ارسال پیام"
         }
       }
     },
     "info": {
-      "open": "Hide information",
-      "closed": "Show information"
+      "open": "پنهان کردن اطلاعات",
+      "closed": "نمایش اطلاعات"
     },
     "hand": {
-      "raise": "Raise hand",
-      "lower": "Lower hand"
+      "raise": "بالا بردن دست",
+      "lower": "پایین آوردن دست"
     },
     "subtitles": {
-      "closed": "Show subtitles",
-      "open": "Hide subtitles"
+      "closed": "نمایش زیرنویس‌ها",
+      "open": "پنهان کردن زیرنویس‌ها"
     },
     "screenShare": {
-      "start": "Share screen",
-      "stop": "Stop screen share"
+      "start": "اشتراک‌گذاری صفحه",
+      "stop": "توقف اشتراک‌گذاری صفحه"
     },
-    "leave": "Leave",
+    "leave": "خروج",
     "participants": {
-      "open": "Hide everyone",
-      "closed": "See everyone",
-      "count_one": "{{count}} participant",
-      "count_other": "{{count}} participants"
+      "open": "پنهان کردن همه",
+      "closed": "دیدن همه",
+      "count_one": "{{count}} شرکت‌کننده",
+      "count_other": "{{count}} شرکت‌کننده"
     },
     "tools": {
-      "open": "Hide more tools",
-      "closed": "Show more tools"
+      "open": "پنهان کردن ابزارهای بیشتر",
+      "closed": "نمایش ابزارهای بیشتر"
     },
     "admin": {
-      "open": "Hide admin",
-      "closed": "Open admin"
+      "open": "پنهان کردن مدیریت",
+      "closed": "باز کردن مدیریت"
     },
-    "moreOptions": "More options",
+    "moreOptions": "گزینه‌های بیشتر",
     "reactions": {
-      "button": "Send reaction",
-      "toolbar": "Send reaction",
+      "button": "ارسال واکنش",
+      "toolbar": "ارسال واکنش",
       "announce": "{{name}} : {{emoji}}",
-      "you": "you",
+      "you": "شما",
       "emojis": {
-        "thumbs-up": "thumbs up",
-        "thumbs-down": "thumbs down",
-        "clapping-hands": "clapping hands",
-        "red-heart": "red heart",
-        "face-with-tears-of-joy": "face with tears of joy",
-        "face-with-open-mouth": "surprised face",
-        "party-popper": "party popper",
-        "folded-hands": "folded hands"
+        "thumbs-up": "لایک",
+        "thumbs-down": "دیس‌لایک",
+        "clapping-hands": "دست‌زدن",
+        "red-heart": "قلب قرمز",
+        "face-with-tears-of-joy": "صورت خندان با اشک شادی",
+        "face-with-open-mouth": "چهره شگفت‌زده",
+        "party-popper": "کاغذپران جشن",
+        "folded-hands": "دست‌های درهم‌رفته"
       }
     }
   },
   "pictureInPicture": {
     "placeholder": {
-      "title": "Your video call is in another window.",
-      "description": "Picture-in-Picture mode allows you to stay connected to the call while performing other tasks.",
-      "bringBack": "Bring the call back here"
+      "title": "تماس ویدیویی شما در پنجره دیگری است.",
+      "description": "حالت تصویر در تصویر به شما اجازه می‌دهد هنگام انجام کارهای دیگر، همچنان به تماس متصل بمانید.",
+      "bringBack": "تماس را اینجا برگردان"
     },
-    "stage": "Participants",
-    "controlBar": "Meeting controls",
-    "title": "Picture-in-picture meeting"
+    "stage": "شرکت‌کنندگان",
+    "controlBar": "کنترل‌های جلسه",
+    "title": "جلسه تصویر در تصویر"
   },
   "options": {
-    "buttonLabel": "More Options",
+    "buttonLabel": "گزینه‌های بیشتر",
     "items": {
-      "feedback": "Give us feedback",
-      "settings": "Settings",
-      "screenRecording": "Screen recording",
-      "transcript": "Transcription",
-      "username": "Update Your Name",
-      "effects": "Backgrounds and Effects",
-      "switchCamera": "Switch camera",
+      "feedback": "بازخورد بدهید",
+      "settings": "تنظیمات",
+      "screenRecording": "ضبط صفحه",
+      "transcript": "رونویسی",
+      "username": "به‌روزرسانی نام شما",
+      "effects": "پس‌زمینه‌ها و افکت‌ها",
+      "switchCamera": "تعویض دوربین",
       "pictureInPicture": {
-        "enter": "Picture-in-picture",
-        "exit": "Close picture-in-picture"
+        "enter": "تصویر در تصویر",
+        "exit": "بستن تصویر در تصویر"
       },
       "fullscreen": {
-        "enter": "Fullscreen",
-        "exit": "Exit fullscreen mode"
+        "enter": "تمام‌صفحه",
+        "exit": "خروج از حالت تمام‌صفحه"
       },
-      "support": "Contact support"
+      "support": "تماس با پشتیبانی"
     }
   },
   "effects": {
-    "activateCamera": "Your camera is disabled. Choose an option to enable it.",
-    "cameraDisabled": "Your camera is disabled.",
-    "notAvailable": "Video effects will be available soon on your browser. We're working on it! In the meantime, you can use Google Chrome for best performance or Firefox :(",
-    "heading": "Blur",
-    "clear": "Disable effect",
+    "activateCamera": "دوربین شما غیرفعال است. یک گزینه برای فعال‌سازی آن انتخاب کنید.",
+    "cameraDisabled": "دوربین شما غیرفعال است.",
+    "notAvailable": "افکت‌های ویدیویی به‌زودی در مرورگر شما در دسترس خواهند بود. ما در حال کار روی آن هستیم! در این میان، می‌توانید برای بهترین عملکرد از Google Chrome یا Firefox استفاده کنید :(",
+    "heading": "محو",
+    "clear": "غیرفعال کردن افکت",
     "blur": {
-      "title": "Background blur",
+      "title": "محو کردن پس‌زمینه",
       "status": {
-        "none": "Background clear.",
-        "light": "Background slightly blurred.",
-        "strong": "Background strongly blurred."
+        "none": "پس‌زمینه شفاف است.",
+        "light": "پس‌زمینه کمی محو شده است.",
+        "strong": "پس‌زمینه به‌شدت محو شده است."
       },
       "light": {
-        "apply": "Slightly blur your background",
-        "clear": "Disable blur"
+        "apply": "کمی پس‌زمینه خود را محو کنید",
+        "clear": "غیرفعال کردن محو"
       },
       "normal": {
-        "apply": "Blur your background",
-        "clear": "Disable blur"
+        "apply": "پس‌زمینه خود را محو کنید",
+        "clear": "غیرفعال کردن محو"
       }
     },
     "virtual": {
-      "title": "Virtual backgrounds",
-      "selectedLabel": "Background applied:",
-      "apply": "Replace your background:",
+      "title": "پس‌زمینه‌های مجازی",
+      "selectedLabel": "پس‌زمینه اعمال‌شده:",
+      "apply": "پس‌زمینه خود را جایگزین کنید:",
       "personal": {
-        "title": "My backgrounds",
-        "selectFileTooltip": "Select an image file to use as a personal background",
-        "notLoggedInWarning": "You are not logged-in, personal backgrounds won't be saved from one meeting to the other.",
-        "warningUploadDisabled": "Personal backgrounds are currently not saved from one meeting to the other.",
-        "uploadLimitReached": "You cannot upload more personal backgrounds.",
-        "uploadInProgress": "Image is being uploaded…",
+        "title": "پس‌زمینه‌های من",
+        "selectFileTooltip": "یک فایل تصویری برای استفاده به‌عنوان پس‌زمینه شخصی انتخاب کنید",
+        "notLoggedInWarning": "شما وارد نشده‌اید؛ پس‌زمینه‌های شخصی از یک جلسه به جلسه دیگر ذخیره نخواهند شد.",
+        "warningUploadDisabled": "پس‌زمینه‌های شخصی فعلاً از یک جلسه به جلسه دیگر ذخیره نمی‌شوند.",
+        "uploadLimitReached": "نمی‌توانید پس‌زمینه شخصی بیشتری بارگذاری کنید.",
+        "uploadInProgress": "تصویر در حال بارگذاری است…",
         "errors": {
-          "close": "Close",
+          "close": "بستن",
           "file_too_large": {
-            "title": "File too large",
-            "description": "The file is too large. Please choose a file smaller than {{maxSize, number}} MB."
+            "title": "فایل خیلی بزرگ است",
+            "description": "اندازه فایل زیاد است. لطفاً فایلی کوچک‌تر از {{maxSize, number}} مگابایت انتخاب کنید."
           },
           "invalid_file_type": {
-            "title": "Invalid file type",
-            "description": "The file type is not supported. Please choose a {{allowedExtension, list(type: 'disjunction')}} file."
+            "title": "نوع فایل نامعتبر است",
+            "description": "نوع فایل پشتیبانی نمی‌شود. لطفاً یک فایل {{allowedExtension, list(type: 'disjunction')}} انتخاب کنید."
           }
         }
       },
       "presets": {
-        "title": "Suggestions",
+        "title": "پیشنهادها",
         "descriptions": {
-          "0": "Fluted wooden furniture",
-          "1": "Meeting room",
-          "2": "Loft with black glass partition",
-          "3": "Dining room",
-          "4": "Wooden shelves",
-          "5": "Wooden staircase",
-          "6": "Gray library",
-          "7": "Coffee counter"
+          "0": "مبلمان چوبی شیاردار",
+          "1": "اتاق جلسه",
+          "2": "آپارتمان زیرشیروانی با جداکننده شیشه‌ای مشکی",
+          "3": "اتاق غذاخوری",
+          "4": "قفسه‌های چوبی",
+          "5": "پله چوبی",
+          "6": "کتابخانه خاکستری",
+          "7": "کانتر قهوه"
         }
       }
     },
     "faceLandmarks": {
-      "title": "Visual Effects",
+      "title": "افکت‌های بصری",
       "glasses": {
-        "apply": "Add Glasses",
-        "clear": "Remove Glasses"
+        "apply": "افزودن عینک",
+        "clear": "حذف عینک"
       },
       "french": {
-        "apply": "Add French touch",
-        "clear": "Remove French touch"
+        "apply": "افزودن حال‌وهوای فرانسوی",
+        "clear": "حذف حال‌وهوای فرانسوی"
       }
     }
   },
   "sidePanel": {
-    "ariaLabel": "Sidepanel - {{title}}",
-    "backToTools": "Back to meeting tools",
+    "ariaLabel": "پنل کناری - {{title}}",
+    "backToTools": "بازگشت به ابزارهای جلسه",
     "heading": {
-      "participants": "Participants",
-      "effects": "Backgrounds and Effects",
-      "chat": "Messages in the chat",
-      "transcript": "Transcribe",
-      "screenRecording": "Record",
-      "admin": "Host settings",
-      "tools": "More tools",
-      "info": "Meeting information"
+      "participants": "شرکت‌کنندگان",
+      "effects": "پس‌زمینه‌ها و افکت‌ها",
+      "chat": "پیام‌های چت",
+      "transcript": "رونویسی",
+      "screenRecording": "ضبط",
+      "admin": "تنظیمات میزبان",
+      "tools": "ابزارهای بیشتر",
+      "info": "اطلاعات جلسه"
     },
     "content": {
-      "participants": "participants",
-      "effects": "Backgrounds and Effects",
-      "chat": "messages",
-      "transcript": "transcribe",
-      "screenRecording": "record",
-      "admin": "host settings",
-      "tools": "more tools",
-      "info": "meeting information"
+      "participants": "شرکت‌کنندگان",
+      "effects": "پس‌زمینه‌ها و افکت‌ها",
+      "chat": "پیام‌ها",
+      "transcript": "رونویسی",
+      "screenRecording": "ضبط",
+      "admin": "تنظیمات میزبان",
+      "tools": "ابزارهای بیشتر",
+      "info": "اطلاعات جلسه"
     },
-    "closeButton": "Hide {{content}}"
+    "closeButton": "پنهان کردن {{content}}"
   },
   "chat": {
-    "disclaimer": "The messages are visible to participants only at the time they are sent. All messages are deleted at the end of the call.",
-    "messagesLog": "Chat messages"
+    "disclaimer": "پیام‌ها فقط در زمان ارسال برای شرکت‌کنندگان قابل مشاهده هستند. همه پیام‌ها در پایان تماس حذف می‌شوند.",
+    "messagesLog": "پیام‌های چت"
   },
   "moreTools": {
-    "body": "Access more tools to enhance your meetings.",
-    "linkAriaLabel": "Open documentation about tools - opens in new window",
-    "moreLink": "Open documentation",
+    "body": "برای بهبود جلسات خود به ابزارهای بیشتری دسترسی پیدا کنید.",
+    "linkAriaLabel": "باز کردن مستندات مربوط به ابزارها - در پنجره جدید باز می‌شود",
+    "moreLink": "باز کردن مستندات",
     "tools": {
       "transcript": {
-        "title": "Transcribe",
-        "body": "Turn meetings into text."
+        "title": "رونویسی",
+        "body": "جلسه‌ها را به متن تبدیل کنید."
       },
       "screenRecording": {
-        "title": "Record",
-        "body": "Save meetings as video."
+        "title": "ضبط",
+        "body": "جلسه‌ها را به‌صورت ویدیو ذخیره کنید."
       }
     }
   },
   "info": {
     "roomInformation": {
-      "title": "Connection Information",
+      "title": "اطلاعات اتصال",
       "button": {
-        "ariaLabel": "Copy the information from your meeting",
-        "copy": "Copy information",
-        "copied": "Information copied"
+        "ariaLabel": "کپی اطلاعات جلسه شما",
+        "copy": "کپی اطلاعات",
+        "copied": "اطلاعات کپی شد"
       },
       "phone": {
-        "call": "Call:",
-        "pinCode": "Code:"
+        "call": "تماس:",
+        "pinCode": "کد:"
       }
     }
   },
   "transcript": {
-    "heading": "Transcribe your meeting with the AI Assistant",
-    "body": "Transcribe up to {{max_duration}} of meeting time.",
-    "bodyWithoutMaxDuration": "Transcribe your meeting without limits.",
+    "heading": "جلسه خود را با دستیار هوش مصنوعی رونویسی کنید",
+    "body": "تا {{max_duration}} از زمان جلسه را رونویسی کنید.",
+    "bodyWithoutMaxDuration": "جلسه خود را بدون محدودیت رونویسی کنید.",
     "details": {
-      "receiver": "The transcript will be sent to the host and co-hosts.",
-      "destination": "A new document will be created on",
-      "destinationUnknown": "A new document will be created",
-      "language": "Meeting language:",
-      "recording": "Also start a recording"
+      "receiver": "رونویسی برای میزبان و هم‌میزبان‌ها ارسال خواهد شد.",
+      "destination": "یک سند جدید در اینجا ایجاد خواهد شد",
+      "destinationUnknown": "یک سند جدید ایجاد خواهد شد",
+      "language": "زبان جلسه:",
+      "recording": "همچنین ضبط را شروع کنید"
     },
     "button": {
-      "start": "Start transcribing the meeting",
-      "stop": "Stop transcribing the meeting",
-      "saving": "Saving…",
-      "starting": "Starting…",
-      "anotherModeStarted": "Screen recording is running. Switch panels and stop it."
+      "start": "شروع رونویسی جلسه",
+      "stop": "توقف رونویسی جلسه",
+      "saving": "در حال ذخیره…",
+      "starting": "در حال شروع…",
+      "anotherModeStarted": "ضبط صفحه در حال اجرا است. به پنل دیگر بروید و آن را متوقف کنید."
     },
-    "linkMore": "Open documentation",
-    "linkAriaLabel": "Open documentation about transcription - opens in new window",
+    "linkMore": "باز کردن مستندات",
+    "linkAriaLabel": "باز کردن مستندات مربوط به رونویسی - در پنجره جدید باز می‌شود",
     "notAdminOrOwner": {
-      "heading": "Restricted Access",
-      "body": "For security reasons, only the meeting creator or an admin can start a transcription (beta).",
-      "linkMore": "Open documentation",
-      "linkAriaLabel": "Open documentation about transcription access - opens in new window",
-      "dividerLabel": "OR",
+      "heading": "دسترسی محدود",
+      "body": "به دلایل امنیتی، فقط سازنده جلسه یا یک مدیر می‌تواند رونویسی (بتا) را شروع کند.",
+      "linkMore": "باز کردن مستندات",
+      "linkAriaLabel": "باز کردن مستندات مربوط به دسترسی رونویسی - در پنجره جدید باز می‌شود",
+      "dividerLabel": "یا",
       "login": {
-        "heading": "Login Required",
-        "body": "Only the meeting creator or an admin can start a transcription. Log in to verify your permissions."
+        "heading": "ورود لازم است",
+        "body": "فقط سازنده جلسه یا یک مدیر می‌تواند رونویسی را شروع کند. برای بررسی مجوزهای خود وارد شوید."
       },
       "request": {
-        "heading": "Request Transcription",
-        "body": "The host will be notified and can enable transcription for you.",
-        "buttonLabel": "Request"
+        "heading": "درخواست رونویسی",
+        "body": "میزبان مطلع خواهد شد و می‌تواند رونویسی را برای شما فعال کند.",
+        "buttonLabel": "درخواست"
       }
     },
     "premium": {
-      "heading": "Premium feature",
-      "body": "This feature is not available to you. Please contact support for more information.",
-      "linkMore": "Open documentation",
-      "linkAriaLabel": "Open documentation about premium access - opens in new window",
-      "dividerLabel": "OR",
+      "heading": "قابلیت پریمیوم",
+      "body": "این قابلیت برای شما در دسترس نیست. برای اطلاعات بیشتر با پشتیبانی تماس بگیرید.",
+      "linkMore": "باز کردن مستندات",
+      "linkAriaLabel": "باز کردن مستندات مربوط به دسترسی پریمیوم - در پنجره جدید باز می‌شود",
+      "dividerLabel": "یا",
       "login": {
-        "heading": "You are not logged in!",
-        "body": "You must be logged in to use this feature. Please log in, then try again."
+        "heading": "شما وارد نشده‌اید!",
+        "body": "برای استفاده از این قابلیت باید وارد شوید. لطفاً وارد شوید و دوباره تلاش کنید."
       },
       "request": {
-        "heading": "Request Transcription",
-        "body": "The host will be notified and can enable transcription for you.",
-        "buttonLabel": "Request"
+        "heading": "درخواست رونویسی",
+        "body": "میزبان مطلع خواهد شد و می‌تواند رونویسی را برای شما فعال کند.",
+        "buttonLabel": "درخواست"
       }
     }
   },
   "screenRecording": {
-    "heading": "Record this call for later",
-    "body": "Record up to {{max_duration}} of meeting.",
-    "bodyWithoutMaxDuration": "Record your meeting without limit.",
-    "linkMore": "Open documentation",
-    "linkAriaLabel": "Open documentation about recording - opens in new window",
+    "heading": "این تماس را برای بعد ضبط کنید",
+    "body": "تا {{max_duration}} از جلسه را ضبط کنید.",
+    "bodyWithoutMaxDuration": "جلسه خود را بدون محدودیت ضبط کنید.",
+    "linkMore": "باز کردن مستندات",
+    "linkAriaLabel": "باز کردن مستندات مربوط به ضبط - در پنجره جدید باز می‌شود",
     "details": {
-      "receiver": "The recording will be sent to the host and co-hosts.",
-      "destination": "This recording will be temporarily stored on our servers",
-      "loading": "Starting recording",
-      "linkMore": "Learn more",
-      "transcription": "Transcribe this recording"
+      "receiver": "ضبط برای میزبان و هم‌میزبان‌ها ارسال خواهد شد.",
+      "destination": "این ضبط به‌صورت موقت روی سرورهای ما ذخیره خواهد شد",
+      "loading": "شروع ضبط",
+      "linkMore": "بیشتر بدانید",
+      "transcription": "رونویسی این ضبط"
     },
     "button": {
-      "start": "Start recording the meeting",
-      "stop": "Stop recording the meeting",
-      "saving": "Saving…",
-      "starting": "Starting…",
-      "anotherModeStarted": "Transcription is running. <br/> Switch panels and stop it."
+      "start": "شروع ضبط جلسه",
+      "stop": "توقف ضبط جلسه",
+      "saving": "در حال ذخیره…",
+      "starting": "در حال شروع…",
+      "anotherModeStarted": "رونویسی در حال اجرا است. <br/> به پنل دیگر بروید و آن را متوقف کنید."
     },
     "notAdminOrOwner": {
-      "heading": "Restricted Access",
-      "body": "For security reasons, only the meeting creator or an admin can start a recording (beta).",
-      "linkMore": "Open documentation",
-      "linkAriaLabel": "Open documentation about recording access - opens in new window",
-      "dividerLabel": "OR",
+      "heading": "دسترسی محدود",
+      "body": "به دلایل امنیتی، فقط سازنده جلسه یا یک مدیر می‌تواند ضبط (بتا) را شروع کند.",
+      "linkMore": "باز کردن مستندات",
+      "linkAriaLabel": "باز کردن مستندات مربوط به دسترسی ضبط - در پنجره جدید باز می‌شود",
+      "dividerLabel": "یا",
       "login": {
-        "heading": "Login Required",
-        "body": "Only the meeting creator or an admin can start screen recording. Log in to verify your permissions."
+        "heading": "ورود لازم است",
+        "body": "فقط سازنده جلسه یا یک مدیر می‌تواند ضبط صفحه را شروع کند. برای بررسی مجوزهای خود وارد شوید."
       },
       "request": {
-        "heading": "Request Recording",
-        "body": "The host will be notified and can enable recording for you.",
-        "buttonLabel": "Request"
+        "heading": "درخواست ضبط",
+        "body": "میزبان مطلع خواهد شد و می‌تواند ضبط را برای شما فعال کند.",
+        "buttonLabel": "درخواست"
       }
     },
     "premium": {
-      "heading": "Premium feature",
-      "body": "This feature is not available to you. Please contact support for more information.",
-      "linkMore": "Open documentation",
-      "linkAriaLabel": "Open documentation about premium access - opens in new window",
-      "dividerLabel": "OR",
+      "heading": "قابلیت پریمیوم",
+      "body": "این قابلیت برای شما در دسترس نیست. برای اطلاعات بیشتر با پشتیبانی تماس بگیرید.",
+      "linkMore": "باز کردن مستندات",
+      "linkAriaLabel": "باز کردن مستندات مربوط به دسترسی پریمیوم - در پنجره جدید باز می‌شود",
+      "dividerLabel": "یا",
       "login": {
-        "heading": "You are not logged in!",
-        "body": "You must be logged in to use this feature. Please log in, then try again."
+        "heading": "شما وارد نشده‌اید!",
+        "body": "برای استفاده از این قابلیت باید وارد شوید. لطفاً وارد شوید و دوباره تلاش کنید."
       },
       "request": {
-        "heading": "Request Recording",
-        "body": "The host will be notified and can enable recording for you.",
-        "buttonLabel": "Request"
+        "heading": "درخواست ضبط",
+        "body": "میزبان مطلع خواهد شد و می‌تواند ضبط را برای شما فعال کند.",
+        "buttonLabel": "درخواست"
       }
     },
-    "durationMessage": "(limited to {{max_duration}}) "
+    "durationMessage": "(محدود به {{max_duration}}) "
   },
   "errorRecordingAlertDialog": {
-    "title": "Recording Failed",
+    "title": "ضبط ناموفق بود",
     "body": {
-      "stop": "We were unable to stop the recording. Please try again in a moment.",
-      "start": "We were unable to start the recording. Please try again in a moment."
+      "stop": "نتوانستیم ضبط را متوقف کنیم. لطفاً کمی بعد دوباره تلاش کنید.",
+      "start": "نتوانستیم ضبط را شروع کنیم. لطفاً کمی بعد دوباره تلاش کنید."
     },
-    "button": "OK"
+    "button": "باشه"
   },
   "admin": {
-    "description": "These host settings allow you to maintain control of your meeting. Only hosts can access these controls.",
+    "description": "این تنظیمات میزبان به شما کمک می‌کند کنترل جلسه خود را حفظ کنید. فقط میزبان‌ها می‌توانند به این کنترل‌ها دسترسی داشته باشند.",
     "access": {
-      "title": "Room access",
-      "description": "These settings will also apply to future occurrences of this meeting.",
-      "type": "Meeting access types",
+      "title": "دسترسی اتاق",
+      "description": "این تنظیمات برای دفعات بعدی این جلسه نیز اعمال خواهد شد.",
+      "type": "نوع‌های دسترسی جلسه",
       "levels": {
         "public": {
-          "label": "Open",
-          "description": "No one needs to request to join the meeting."
+          "label": "باز",
+          "description": "هیچ‌کس برای پیوستن به جلسه نیاز به درخواست ندارد."
         },
         "trusted": {
-          "label": "Open to trusted people",
-          "description": "Authenticated people do not need to request to join the meeting."
+          "label": "باز برای افراد مورد اعتماد",
+          "description": "افراد احراز هویت‌شده نیاز به درخواست برای پیوستن به جلسه ندارند."
         },
         "restricted": {
-          "label": "Restricted",
-          "description": "People who have not been invited to the meeting must request to join."
+          "label": "محدود",
+          "description": "افرادی که به جلسه دعوت نشده‌اند باید برای پیوستن درخواست بدهند."
         }
       }
     },
     "moderation": {
-      "title": "Meeting Moderation",
-      "description": "These settings restrict the actions contributors can take during the meeting.",
+      "title": "مدیریت جلسه",
+      "description": "این تنظیمات اقداماتی را که مشارکت‌کنندگان می‌توانند در طول جلسه انجام دهند محدود می‌کند.",
       "microphone": {
-        "label": "Turn on microphone",
+        "label": "روشن کردن میکروفون",
         "description": ""
       },
       "camera": {
-        "label": "Enable video",
+        "label": "فعال کردن ویدیو",
         "description": ""
       },
       "screenshare": {
-        "label": "Share their screen",
-        "description": "Disabling this option will prevent participants from sharing their screen, and any ongoing screen sharing will be stopped immediately."
+        "label": "اشتراک‌گذاری صفحه خود",
+        "description": "غیرفعال کردن این گزینه مانع اشتراک‌گذاری صفحه توسط شرکت‌کنندگان می‌شود و هر اشتراک‌گذاری صفحه در حال اجرا فوراً متوقف خواهد شد."
       },
       "mute": {
-        "label": "Mute others",
-        "description": "When disabled, participants will no longer be able to mute other participants."
+        "label": "بی‌صدا کردن دیگران",
+        "description": "وقتی غیرفعال باشد، شرکت‌کنندگان دیگر نمی‌توانند شرکت‌کنندگان دیگر را بی‌صدا کنند."
       }
     }
   },
   "rating": {
-    "submit": "Submit",
-    "question": "What do you think about the quality of your call?",
+    "submit": "ارسال",
+    "question": "نظر شما درباره کیفیت تماس‌تان چیست؟",
     "levels": {
-      "min": "very poor",
-      "max": "excellent"
+      "min": "بسیار ضعیف",
+      "max": "عالی"
     }
   },
   "openFeedback": {
-    "question": "What can we do to improve ourselves?",
-    "placeholder": "Describe your bugs or share your suggestions…",
-    "submit": "Submit",
-    "skip": "Skip"
+    "question": "برای بهتر شدن چه کاری می‌توانیم انجام دهیم؟",
+    "placeholder": "اشکالات خود را توصیف کنید یا پیشنهادهایتان را به اشتراک بگذارید…",
+    "submit": "ارسال",
+    "skip": "رد کردن"
   },
   "confirmationMessage": {
-    "heading": "Thank you for your submission",
-    "body": "Our product team takes the time to carefully review your feedback. We will get back to you as soon as possible."
+    "heading": "از ارسال شما متشکریم",
+    "body": "تیم محصول ما با دقت بازخورد شما را بررسی می‌کند. در اسرع وقت با شما تماس خواهیم گرفت."
   },
   "authenticationMessage": {
-    "heading": "How can we contact you?",
-    "placeholder": "Your email",
-    "submit": "Send",
-    "ignore": "Ignore"
+    "heading": "چطور می‌توانیم با شما تماس بگیریم؟",
+    "placeholder": "ایمیل شما",
+    "submit": "ارسال",
+    "ignore": "نادیده گرفتن"
   },
   "participants": {
-    "subheading": "In room",
-    "you": "You",
-    "unknown": "Unknown participant",
-    "host": "Host",
-    "contributors": "Contributors",
+    "subheading": "داخل اتاق",
+    "you": "شما",
+    "unknown": "شرکت‌کننده ناشناس",
+    "host": "میزبان",
+    "contributors": "مشارکت‌کنندگان",
     "collapsable": {
-      "open": "Open {{name}} list",
-      "close": "Close {{name}} list"
+      "open": "باز کردن فهرست {{name}}",
+      "close": "بستن فهرست {{name}}"
     },
-    "muteYourself": "Close your mic",
-    "muteParticipant": "Close the mic of {{name}}",
+    "muteYourself": "میکروفون خود را خاموش کنید",
+    "muteParticipant": "میکروفون {{name}} را خاموش کنید",
     "muteParticipantAlert": {
-      "heading": "Mute {{name}}",
-      "description": "Mute {{name}} for all participants? {{name}} will be the only one who can unmute themselves.",
-      "confirm": "Mute",
-      "cancel": "Cancel"
+      "heading": "بی‌صدا کردن {{name}}",
+      "description": "آیا {{name}} را برای همه شرکت‌کنندگان بی‌صدا کنیم؟ {{name}} تنها کسی خواهد بود که می‌تواند خودش را از حالت بی‌صدا خارج کند.",
+      "confirm": "بی‌صدا کردن",
+      "cancel": "لغو"
     },
-    "raisedHands": "Raised hands",
-    "lowerParticipantHand": "Lower {{name}}'s hand",
-    "lowerParticipantsHand": "Lower all hands",
-    "muteParticipants": "Mute all microphones",
+    "raisedHands": "دست‌های بالا رفته",
+    "lowerParticipantHand": "پایین آوردن دست {{name}}",
+    "lowerParticipantsHand": "پایین آوردن همه دست‌ها",
+    "muteParticipants": "بی‌صدا کردن همه میکروفون‌ها",
     "waiting": {
-      "title": "Lobby",
+      "title": "اتاق انتظار",
       "accept": {
-        "button": "Accept",
-        "label": "Accept {{name}} into the meeting",
-        "all": "Accept all"
+        "button": "پذیرفتن",
+        "label": "پذیرفتن {{name}} به جلسه",
+        "all": "پذیرفتن همه"
       },
       "deny": {
-        "button": "Deny",
-        "label": "Deny {{name}} from the meeting",
-        "all": "Deny all"
+        "button": "رد کردن",
+        "label": "رد کردن {{name}} از جلسه",
+        "all": "رد کردن همه"
       }
     },
-    "moreOptions": "More options"
+    "moreOptions": "گزینه‌های بیشتر"
   },
   "participantMenu": {
     "remove": {
-      "label": "Remove from the call",
-      "ariaLabel": "Remove {{name}} from the call"
+      "label": "حذف از تماس",
+      "ariaLabel": "حذف {{name}} از تماس"
     },
     "unpin": {
-      "label": "Unpin",
-      "ariaLabel": "Unpin {{name}}"
+      "label": "برداشتن پین",
+      "ariaLabel": "برداشتن پین {{name}}"
     },
     "pin": {
-      "label": "Pin",
-      "ariaLabel": "Pin {{name}}"
+      "label": "پین کردن",
+      "ariaLabel": "پین کردن {{name}}"
     }
   },
   "pinAnnouncements": {
-    "pin": "The video of {{name}} is pinned.",
-    "unpin": "The video of {{name}} is no longer pinned.",
+    "pin": "ویدیوی {{name}} پین شد.",
+    "unpin": "ویدیوی {{name}} دیگر پین نیست.",
     "self": {
-      "pin": "Your video is pinned.",
-      "unpin": "Your video is no longer pinned."
+      "pin": "ویدیوی شما پین شد.",
+      "unpin": "ویدیوی شما دیگر پین نیست."
     }
   },
   "recordingStateToast": {
     "transcript": {
-      "started": "Transcribing",
-      "starting": "Transcription starting",
-      "stopping": "Transcription stopping"
+      "started": "در حال رونویسی",
+      "starting": "رونویسی در حال شروع",
+      "stopping": "رونویسی در حال توقف"
     },
     "screen_recording": {
-      "started": "Recording in progress",
-      "starting": "Starting recording",
-      "stopping": "Stopping recording"
+      "started": "ضبط در حال انجام است",
+      "starting": "شروع ضبط",
+      "stopping": "توقف ضبط"
     },
     "any": {
-      "started": "Recording in progress"
+      "started": "ضبط در حال انجام است"
     },
     "limitReachedAlert": {
-      "title": "Recording limit exceeded",
-      "description": "The recording has exceeded the maximum allowed duration{{duration_message}}. It will now be saved automatically.",
-      "durationMessage": " of {{duration}}",
-      "button": "OK"
+      "title": "محدودیت ضبط رد شد",
+      "description": "ضبط از حداکثر مدت مجاز{{duration_message}} بیشتر شده است. اکنون به‌طور خودکار ذخیره خواهد شد.",
+      "durationMessage": " به مدت {{duration}}",
+      "button": "باشه"
     }
   },
   "participantTileFocus": {
-    "containerLabel": "Options for {{name}}",
-    "toolbarHint": "{{shortcut}}: access shortcuts directly.",
+    "containerLabel": "گزینه‌های {{name}}",
+    "toolbarHint": "{{shortcut}}: دسترسی مستقیم به میانبرها.",
     "pin": {
-      "enable": "Pin",
-      "disable": "Unpin"
+      "enable": "پین کردن",
+      "disable": "برداشتن پین"
     },
-    "effects": "Apply backgrounds and effects",
-    "muteParticipant": "Mute {{name}}",
-    "fullScreen": "Full screen"
+    "effects": "اعمال پس‌زمینه‌ها و افکت‌ها",
+    "muteParticipant": "بی‌صدا کردن {{name}}",
+    "fullScreen": "تمام‌صفحه"
   },
   "shortcutsPanel": {
-    "title": "Keyboard shortcuts",
+    "title": "میانبرهای صفحه‌کلید",
     "categories": {
-      "navigation": "Navigation",
-      "media": "Media",
-      "interaction": "Interaction"
+      "navigation": "ناوبری",
+      "media": "رسانه",
+      "interaction": "تعامل"
     },
     "actions": {
-      "open-shortcuts": "Open shortcuts help",
-      "focus-toolbar": "Focus bottom toolbar",
-      "toggle-microphone": "Toggle microphone",
-      "toggle-camera": "Toggle camera",
-      "push-to-talk": "Push-to-talk (hold to unmute)",
-      "reaction": "Emoji reaction panel",
-      "fullscreen": "Toggle fullscreen",
-      "recording": "Toggle recording panel",
-      "raise-hand": "Raise or lower hand",
-      "toggle-chat": "Toggle chat",
-      "toggle-participants": "Toggle participants",
-      "open-shortcuts-settings": "Open shortcuts settings"
+      "open-shortcuts": "باز کردن راهنمای میانبرها",
+      "focus-toolbar": "تمرکز روی نوار ابزار پایین",
+      "toggle-microphone": "تغییر وضعیت میکروفون",
+      "toggle-camera": "تغییر وضعیت دوربین",
+      "push-to-talk": "فشار برای صحبت (نگه دارید تا صدا فعال شود)",
+      "reaction": "پنل واکنش‌های ایموجی",
+      "fullscreen": "تغییر وضعیت تمام‌صفحه",
+      "recording": "تغییر وضعیت پنل ضبط",
+      "raise-hand": "بالا یا پایین بردن دست",
+      "toggle-chat": "تغییر وضعیت چت",
+      "toggle-participants": "تغییر وضعیت شرکت‌کنندگان",
+      "open-shortcuts-settings": "باز کردن تنظیمات میانبرها"
     },
     "sr": {
-      "control": "Control",
+      "control": "کنترل",
       "command": "Command",
       "alt": "Alt",
       "option": "Option",
       "shift": "Shift",
-      "plus": "plus",
-      "hold": "Hold {{key}}",
-      "noShortcut": "No shortcut"
+      "plus": "به‌علاوه",
+      "hold": "نگه داشتن {{key}}",
+      "noShortcut": "میانبری وجود ندارد"
     },
     "visual": {
-      "hold": "Hold {{key}}"
+      "hold": "نگه داشتن {{key}}"
     }
   },
   "fullScreenWarning": {
-    "message": "To avoid infinite loop display, do not share your entire screen. Instead, share a tab or another window.",
-    "stop": "Stop presenting",
-    "ignore": "Ignore"
+    "message": "برای جلوگیری از نمایش حلقه بی‌نهایت، کل صفحه خود را به اشتراک نگذارید. در عوض، یک تب یا پنجره دیگر را به اشتراک بگذارید.",
+    "stop": "توقف ارائه",
+    "ignore": "نادیده گرفتن"
   },
   "participantTile": {
-    "screenShare": "{{name}}'s screen"
+    "screenShare": "صفحه {{name}}"
   }
 }
