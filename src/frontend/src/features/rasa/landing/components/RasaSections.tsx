@@ -111,7 +111,7 @@ export const RasaSections = ({ locale, content, onLocaleChange }: Props) => {
               src={branding.logoPath}
               alt={branding.logoAlt}
               width="148"
-              height="36"
+              height="86"
               decoding="async"
             />
           </a>
@@ -130,15 +130,6 @@ export const RasaSections = ({ locale, content, onLocaleChange }: Props) => {
             <a className="rasa-btn rasa-btn-primary" href="/meet">
               {content.start}
             </a>
-            <button
-              className="rasa-language"
-              onClick={onLocaleChange}
-              type="button"
-              aria-label={isFa ? 'Switch language to English' : 'تغییر زبان به فارسی'}
-            >
-              <span aria-hidden="true">{isFa ? 'FA' : 'EN'}</span>
-              <RiArrowDownSLine size={16} aria-hidden="true" />
-            </button>
             <button
               className="rasa-menu-toggle"
               type="button"
@@ -512,9 +503,20 @@ const HeroDecorations = () => {
         aria-hidden="true"
         focusable="false"
       >
-        <path d="M88 228C205 132 343 92 488 126c114 27 171 102 276 121 126 23 245-39 327-131" />
-        <path d="M106 516c130-56 264-40 362 29 89 63 187 99 316 76 121-22 208-90 332-198" />
-        <path d="M158 180c92 21 160 70 231 134 74 67 147 95 238 92 97-3 177-48 255-106 92-68 164-106 286-89" />
+        <defs>
+          <linearGradient id="rasa-flow" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="rgba(102, 150, 234, 0)" />
+            <stop offset="45%" stopColor="rgba(102, 150, 234, 0.32)" />
+            <stop offset="100%" stopColor="rgba(102, 150, 234, 0)" />
+          </linearGradient>
+        </defs>
+        <path className="rasa-line-arc rasa-line-arc-a" d="M88 228C205 132 343 92 488 126c114 27 171 102 276 121 126 23 245-39 327-131" />
+        <path className="rasa-line-arc rasa-line-arc-b" d="M106 516c130-56 264-40 362 29 89 63 187 99 316 76 121-22 208-90 332-198" />
+        <path className="rasa-line-arc rasa-line-arc-c" d="M158 180c92 21 160 70 231 134 74 67 147 95 238 92 97-3 177-48 255-106 92-68 164-106 286-89" />
+        <circle className="rasa-node rasa-node-a" cx="372" cy="125" r="5" />
+        <circle className="rasa-node rasa-node-b" cx="808" cy="240" r="6" />
+        <circle className="rasa-node rasa-node-c" cx="486" cy="520" r="5" />
+        <circle className="rasa-node rasa-node-d" cx="962" cy="366" r="4" />
       </svg>
       {dots.map((dot, index) => (
         <span
@@ -523,7 +525,7 @@ const HeroDecorations = () => {
           style={{
             width: `${dot.size}px`,
             height: `${dot.size}px`,
-            animationDelay: `${index * 0.35}s`,
+            animationDelay: `${index * 0.42}s`,
           }}
         />
       ))}

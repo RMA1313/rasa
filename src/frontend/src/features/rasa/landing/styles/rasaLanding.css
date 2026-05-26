@@ -52,9 +52,24 @@
   color: var(--ink);
   background:
     radial-gradient(
+      circle at 52% 20%,
+      rgba(80, 197, 255, 0.16),
+      transparent 20rem
+    ),
+    radial-gradient(
       circle at 18% 16%,
       rgba(34, 124, 255, 0.17),
       transparent 29rem
+    ),
+    radial-gradient(
+      circle at 84% 12%,
+      rgba(75, 231, 211, 0.12),
+      transparent 18rem
+    ),
+    radial-gradient(
+      ellipse at 50% 48%,
+      rgba(13, 89, 255, 0.04),
+      transparent 56%
     ),
     radial-gradient(
       circle at 57% 17%,
@@ -72,7 +87,7 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
-  overflow: clip;
+  overflow: hidden;
   z-index: 0;
 }
 
@@ -86,7 +101,54 @@
   stroke-width: 1;
   stroke-linecap: round;
   stroke-dasharray: 1 7;
-  opacity: 0.36;
+  opacity: 0.32;
+}
+
+.rasa-line-arc {
+  fill: none;
+  stroke: url(#rasa-flow);
+  stroke-width: 1;
+  stroke-linecap: round;
+  stroke-dasharray: 1 10;
+  opacity: 0.82;
+  filter: drop-shadow(0 0 10px rgba(102, 150, 234, 0.08));
+  animation: rasa-line-drift 24s linear infinite;
+}
+
+.rasa-line-arc-b {
+  animation-duration: 30s;
+  opacity: 0.66;
+}
+
+.rasa-line-arc-c {
+  animation-duration: 27s;
+  opacity: 0.56;
+}
+
+.rasa-node {
+  fill: rgba(255, 255, 255, 0.98);
+  stroke: rgba(93, 186, 255, 0.55);
+  stroke-width: 1.5;
+  filter:
+    drop-shadow(0 0 8px rgba(93, 186, 255, 0.18))
+    drop-shadow(0 0 18px rgba(93, 186, 255, 0.12));
+  transform-origin: center;
+  animation: rasa-node-pulse 6.8s ease-in-out infinite;
+}
+
+.rasa-node-b {
+  animation-duration: 7.9s;
+  animation-delay: -1.8s;
+}
+
+.rasa-node-c {
+  animation-duration: 6.4s;
+  animation-delay: -3.2s;
+}
+
+.rasa-node-d {
+  animation-duration: 8.4s;
+  animation-delay: -2.5s;
 }
 
 .rasa-dot-dot {
@@ -96,82 +158,94 @@
   pointer-events: none;
   opacity: 0.96;
   box-shadow:
-    0 0 0 12px rgba(255, 255, 255, 0.46),
-    0 18px 36px rgba(40, 90, 170, 0.12);
+    0 0 0 10px rgba(255, 255, 255, 0.44),
+    0 14px 28px rgba(40, 90, 170, 0.1);
   animation-name: rasa-dot-float;
-  animation-duration: var(--dot-duration, 12s);
+  animation-duration: var(--dot-duration, 16s);
   animation-delay: var(--dot-delay, 0s);
   animation-direction: var(--dot-direction, normal);
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
   animation-fill-mode: both;
   will-change: transform, opacity;
+  transform: translate3d(0, 0, 0);
+}
+
+.rasa-dot-dot::after {
+  content: '';
+  position: absolute;
+  inset: 28% 28%;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.44);
+  filter: blur(4px);
+  opacity: 0.75;
 }
 
 .rasa-dot-a {
-  inset-inline-start: 7%;
-  top: 11%;
-  background: linear-gradient(180deg, #ffcf5a, #ff9f35);
-  --dot-duration: 13s;
+  inset-inline-start: 8%;
+  top: 10%;
+  background: linear-gradient(180deg, #ffd96b, #ffab39);
+  --dot-duration: 15.5s;
+  --dot-delay: -1.2s;
 }
 
 .rasa-dot-b {
-  inset-inline-start: 19%;
-  top: 21%;
-  background: linear-gradient(180deg, #7bc9ff, #2d7bff);
-  --dot-duration: 14s;
-  --dot-delay: -2.2s;
+  inset-inline-start: 23%;
+  top: 18%;
+  background: linear-gradient(180deg, #8fd0ff, #2f7dff);
+  --dot-duration: 17s;
+  --dot-delay: -3.4s;
   --dot-direction: reverse;
 }
 
 .rasa-dot-c {
-  inset-inline-start: 34%;
-  top: 8%;
-  background: linear-gradient(180deg, #ff8cc7, #ff5ea6);
-  --dot-duration: 15s;
-  --dot-delay: -4s;
+  inset-inline-start: 35%;
+  top: 7%;
+  background: linear-gradient(180deg, #ff93cf, #ff61aa);
+  --dot-duration: 18s;
+  --dot-delay: -5.1s;
 }
 
 .rasa-dot-d {
-  inset-inline-start: 67%;
-  top: 14%;
-  background: linear-gradient(180deg, #8ef0dc, #22c7a4);
-  --dot-duration: 16s;
-  --dot-delay: -1.4s;
+  inset-inline-start: 66%;
+  top: 13%;
+  background: linear-gradient(180deg, #9af3e1, #25caa8);
+  --dot-duration: 17.5s;
+  --dot-delay: -2.6s;
   --dot-direction: reverse;
 }
 
 .rasa-dot-e {
-  inset-inline-start: 79%;
-  top: 34%;
-  background: linear-gradient(180deg, #ff9e86, #ff6d5d);
-  --dot-duration: 12.5s;
-  --dot-delay: -5.3s;
+  inset-inline-start: 82%;
+  top: 31%;
+  background: linear-gradient(180deg, #ffab94, #ff705f);
+  --dot-duration: 15s;
+  --dot-delay: -4.1s;
 }
 
 .rasa-dot-f {
-  inset-inline-start: 12%;
-  top: 62%;
-  background: linear-gradient(180deg, #b28cff, #7d52ff);
-  --dot-duration: 14.5s;
-  --dot-delay: -3.1s;
+  inset-inline-start: 13%;
+  top: 64%;
+  background: linear-gradient(180deg, #ba98ff, #7d54ff);
+  --dot-duration: 16.5s;
+  --dot-delay: -6s;
   --dot-direction: reverse;
 }
 
 .rasa-dot-g {
-  inset-inline-start: 47%;
-  top: 67%;
-  background: linear-gradient(180deg, #7bd6ff, #49b5ff);
-  --dot-duration: 15.5s;
-  --dot-delay: -6.4s;
+  inset-inline-start: 49%;
+  top: 68%;
+  background: linear-gradient(180deg, #8ddfff, #4bb8ff);
+  --dot-duration: 18.5s;
+  --dot-delay: -7.2s;
 }
 
 .rasa-dot-h {
-  inset-inline-start: 88%;
-  top: 58%;
-  background: linear-gradient(180deg, #ffd96b, #ffb347);
-  --dot-duration: 13.8s;
-  --dot-delay: -2.6s;
+  inset-inline-start: 89%;
+  top: 59%;
+  background: linear-gradient(180deg, #ffe27d, #ffb94e);
+  --dot-duration: 16s;
+  --dot-delay: -2.2s;
   --dot-direction: reverse;
 }
 
@@ -204,20 +278,42 @@ html {
 .rasa-nav {
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 12;
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  width: min(1280px, calc(100% - 48px));
-  min-height: 78px;
+  width: min(1240px, calc(100% - 32px));
+  min-height: 88px;
   margin: 0 auto;
+  margin-top: 16px;
   padding-block: 0;
-  backdrop-filter: blur(18px);
-  background: rgba(248, 251, 255, 0.72);
+  backdrop-filter: blur(26px) saturate(1.2);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(247, 251, 255, 0.72));
   border: 1px solid rgba(13, 41, 91, 0.08);
-  border-top: 0;
-  border-radius: 0 0 24px 24px;
-  box-shadow: 0 12px 30px rgba(12, 31, 60, 0.07);
+  border-radius: 28px;
+  box-shadow:
+    0 20px 44px rgba(12, 31, 60, 0.09),
+    0 2px 0 rgba(255, 255, 255, 0.66) inset,
+    inset 0 -1px 0 rgba(84, 141, 224, 0.08);
+  overflow: hidden;
+}
+
+.rasa-nav::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      120deg,
+      rgba(255, 255, 255, 0.55),
+      transparent 22%,
+      transparent 78%,
+      rgba(80, 175, 255, 0.08)
+    );
+  opacity: 0.9;
 }
 
 .rasa-navbar-inner {
@@ -225,20 +321,23 @@ html {
   grid-template-columns: minmax(220px, 1fr) auto minmax(220px, 1fr);
   align-items: center;
   width: 100%;
-  gap: 36px;
-  min-height: 78px;
+  gap: 24px;
+  min-height: 88px;
   padding: 0 20px;
+  position: relative;
+  z-index: 1;
 }
 
 .rasa-brand {
   justify-self: start;
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   color: #071735;
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 900;
   text-decoration: none;
+  letter-spacing: -0.01em;
 }
 
 [dir='rtl'] .rasa-brand {
@@ -248,9 +347,10 @@ html {
 .rasa-brand-logo {
   display: block;
   width: auto;
-  height: 34px;
+  height: 40px;
   object-fit: contain;
   flex: 0 0 auto;
+  filter: drop-shadow(0 12px 18px rgba(18, 88, 244, 0.1));
 }
 
 .rasa-hero-brand {
@@ -278,7 +378,7 @@ html {
 
 .rasa-nav-links {
   display: flex;
-  gap: 28px;
+  gap: 10px;
   align-items: center;
   justify-content: center;
   font-size: 14px;
@@ -286,14 +386,19 @@ html {
 }
 
 .rasa-nav-links a {
-  color: #1d2c47;
+  color: #31435d;
   text-decoration: none;
   position: relative;
-  padding: 8px 0;
-  letter-spacing: 0.01em;
+  padding: 11px 14px;
+  border-radius: 999px;
+  letter-spacing: 0.005em;
   transition:
     color 180ms ease,
-    transform 180ms ease;
+    transform 180ms ease,
+    background-color 180ms ease,
+    box-shadow 180ms ease,
+    opacity 180ms ease;
+  opacity: 0.78;
 }
 
 .rasa-nav-links a::after,
@@ -317,21 +422,32 @@ html {
 }
 
 .rasa-nav-links a:hover {
-  color: #135ce9;
+  color: #0f55df;
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow:
+    0 10px 22px rgba(18, 88, 244, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.78);
 }
 
 .rasa-nav-links a.is-active {
-  color: #135ce9;
+  color: #0f55df;
+  font-weight: 700;
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow:
+    0 12px 24px rgba(18, 88, 244, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.82);
 }
 
 .rasa-nav-links a.is-active::after {
-  transform: scaleX(1);
+  transform: scaleX(0);
 }
 
 .rasa-nav-actions {
   justify-self: start;
   display: flex;
-  gap: 14px;
+  gap: 10px;
   align-items: center;
 }
 
@@ -342,7 +458,7 @@ html {
 .rasa-btn,
 .rasa-language,
 .rasa-country {
-  border: 1px solid rgba(12, 41, 91, 0.14);
+  border: 1px solid rgba(12, 41, 91, 0.12);
   font: inherit;
   font-weight: 800;
   cursor: pointer;
@@ -360,34 +476,41 @@ html {
   justify-content: center;
   gap: 10px;
   min-height: 44px;
-  padding: 0 24px;
-  border-radius: 16px;
+  padding: 0 20px;
+  border-radius: 14px;
   white-space: nowrap;
 }
 
 .rasa-btn-primary {
   color: #fff;
-  background: linear-gradient(180deg, #1763ff, #094bed);
+  background:
+    linear-gradient(180deg, rgba(64, 132, 255, 0.98), rgba(13, 82, 227, 0.98)),
+    linear-gradient(180deg, #1763ff, #094bed);
   border-color: rgba(255, 255, 255, 0.18);
   box-shadow:
-    0 16px 35px rgba(18, 88, 244, 0.29),
-    inset 0 1px 0 rgba(255, 255, 255, 0.28);
+    0 16px 32px rgba(18, 88, 244, 0.24),
+    0 2px 0 rgba(255, 255, 255, 0.16) inset,
+    inset 0 1px 0 rgba(255, 255, 255, 0.22);
 }
 
 .rasa-nav-actions .rasa-btn-primary {
-  min-width: 146px;
-  min-height: 48px;
+  min-width: 140px;
+  min-height: 50px;
+  padding-inline: 22px;
+  border-radius: 16px;
   box-shadow:
-    0 16px 32px rgba(18, 88, 244, 0.25),
-    0 0 0 1px rgba(255, 255, 255, 0.18) inset;
+    0 18px 34px rgba(18, 88, 244, 0.23),
+    0 1px 0 rgba(255, 255, 255, 0.18) inset,
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
 }
 
 .rasa-btn-ghost {
   color: #132543;
-  background: rgba(255, 255, 255, 0.82);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(248, 251, 255, 0.72));
   box-shadow:
-    0 14px 32px rgba(31, 61, 110, 0.09),
-    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    0 14px 30px rgba(31, 61, 110, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.92);
 }
 
 .rasa-btn-large {
@@ -425,12 +548,15 @@ html {
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  min-height: 44px;
-  padding: 0 16px;
+  min-height: 46px;
+  padding: 0 14px;
   color: #30435f;
-  background: rgba(255, 255, 255, 0.68);
-  border-radius: 999px;
-  box-shadow: 0 10px 28px rgba(31, 61, 110, 0.07);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(248, 251, 255, 0.74));
+  border-radius: 14px;
+  box-shadow:
+    0 10px 24px rgba(31, 61, 110, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.78);
 }
 
 .rasa-menu-toggle {
@@ -440,10 +566,13 @@ html {
   width: 44px;
   height: 44px;
   color: #12305f;
-  background: rgba(255, 255, 255, 0.82);
-  border: 1px solid rgba(12, 41, 91, 0.12);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(248, 251, 255, 0.76));
+  border: 1px solid rgba(12, 41, 91, 0.11);
   border-radius: 14px;
-  box-shadow: 0 10px 28px rgba(31, 61, 110, 0.08);
+  box-shadow:
+    0 10px 24px rgba(31, 61, 110, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.78);
 }
 
 .rasa-mobile-menu {
@@ -454,12 +583,29 @@ html {
   position: relative;
   display: grid;
   grid-template-columns: 1.04fr 0.96fr;
-  gap: 70px;
+  gap: 54px;
   align-items: center;
   width: min(1200px, calc(100% - 48px));
   min-height: calc(100vh - 96px);
   margin: 0 auto;
-  padding: 56px 0 78px;
+  padding: 64px 0 84px;
+}
+
+.rasa-hero::after {
+  content: '';
+  position: absolute;
+  inset: auto 10% -24px 8%;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse,
+    rgba(16, 89, 242, 0.13) 0,
+    rgba(16, 89, 242, 0.05) 30%,
+    transparent 74%
+  );
+  filter: blur(26px);
+  z-index: 0;
+  pointer-events: none;
 }
 
 .rasa-page > .rasa-nav,
@@ -483,36 +629,71 @@ html {
 
 .rasa-orbits {
   position: absolute;
-  inset-inline-start: -90px;
-  top: 24px;
-  width: 620px;
-  height: 430px;
-  opacity: 0.62;
+  inset-inline-start: -120px;
+  top: 4px;
+  width: 700px;
+  height: 520px;
+  opacity: 0.58;
   background:
     radial-gradient(
-      circle at 54% 18%,
-      rgba(255, 255, 255, 0.95) 0 4px,
-      transparent 5px
+      circle at 55% 20%,
+      rgba(255, 255, 255, 0.96) 0 5px,
+      transparent 6px
     ),
     radial-gradient(
-      circle at 8% 48%,
-      rgba(255, 255, 255, 0.95) 0 4px,
-      transparent 5px
+      circle at 10% 50%,
+      rgba(255, 255, 255, 0.96) 0 5px,
+      transparent 6px
     ),
     repeating-radial-gradient(
       ellipse at 54% 50%,
-      transparent 0 67px,
-      rgba(102, 150, 234, 0.24) 68px 69px,
-      transparent 70px 116px
+      transparent 0 70px,
+      rgba(102, 150, 234, 0.18) 71px 72px,
+      transparent 73px 118px
     );
   pointer-events: none;
-  animation: rasa-orbit 26s linear infinite;
+  animation: rasa-orbit 34s linear infinite;
 }
 
 .rasa-hero-copy {
   position: relative;
   z-index: 2;
-  padding-top: 8px;
+  padding-top: 16px;
+  max-width: 720px;
+}
+
+.rasa-hero-copy::before {
+  content: '';
+  position: absolute;
+  inset-inline-start: -12px;
+  top: 6px;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(93, 186, 255, 0.14) 0,
+    rgba(93, 186, 255, 0.07) 38%,
+    transparent 70%
+  );
+  filter: blur(10px);
+  z-index: -1;
+}
+
+.rasa-hero-copy::after {
+  content: '';
+  position: absolute;
+  inset-inline-end: 10%;
+  top: 82px;
+  width: 120px;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(88, 172, 255, 0.28),
+    transparent
+  );
+  opacity: 0.9;
 }
 
 .rasa-badge,
@@ -529,17 +710,17 @@ html {
 }
 
 .rasa-badge {
-  margin-bottom: 28px;
+  margin-bottom: 26px;
   padding: 11px 16px;
 }
 
 .rasa-hero h1 {
   margin: 0;
   color: #071735;
-  font-size: clamp(3rem, 4vw, 4.8rem);
+  font-size: clamp(3.1rem, 4.2vw, 5rem);
   font-weight: 900;
-  line-height: 1.02;
-  max-width: 7.8ch;
+  line-height: 1.03;
+  max-width: 7.6ch;
 }
 
 .rasa-hero h1 span {
@@ -556,7 +737,7 @@ html {
 
 .rasa-hero p {
   width: min(100%, 590px);
-  margin: 22px 0 0;
+  margin: 24px 0 0;
   color: #3f506d;
   font-size: 18px;
   font-weight: 500;
@@ -566,7 +747,7 @@ html {
 .rasa-hero-buttons {
   display: flex;
   gap: 16px;
-  margin-top: 26px;
+  margin-top: 28px;
 }
 
 .rasa-trust-row {
@@ -612,35 +793,54 @@ html {
   padding: 16px;
   color: #e7f2ff;
   background:
-    linear-gradient(135deg, rgba(13, 32, 58, 0.98), rgba(4, 24, 50, 0.96)),
+    linear-gradient(135deg, rgba(13, 32, 58, 0.97), rgba(4, 24, 50, 0.94)),
     #071a33;
-  border: 1px solid rgba(88, 185, 255, 0.24);
-  border-radius: 22px;
+  border: 1px solid rgba(88, 185, 255, 0.2);
+  border-radius: 26px;
   box-shadow:
-    0 34px 80px rgba(18, 88, 244, 0.29),
-    0 3px 0 rgba(45, 119, 255, 0.38),
+    0 44px 96px rgba(18, 88, 244, 0.28),
+    0 6px 0 rgba(45, 119, 255, 0.28),
+    0 24px 48px rgba(1, 16, 38, 0.22),
     inset 0 1px 0 rgba(255, 255, 255, 0.08);
-  transform: perspective(1100px) rotateY(10deg) rotateX(2deg) rotateZ(-1deg);
+  transform: perspective(1100px) rotateY(8deg) rotateX(2deg) rotateZ(-0.7deg);
   transform-origin: center;
+  justify-self: end;
   animation: rasa-float 10s ease-in-out infinite;
 }
 
 [dir='rtl'] .rasa-mockup {
-  transform: perspective(1100px) rotateY(-10deg) rotateX(2deg) rotateZ(1deg);
+  transform: perspective(1100px) rotateY(-8deg) rotateX(2deg) rotateZ(0.7deg);
+  justify-self: start;
 }
 
 .rasa-mockup::after {
   content: '';
   position: absolute;
-  inset: auto 35px -24px;
-  height: 24px;
+  inset: auto 28px -34px;
+  height: 34px;
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(44, 153, 255, 0.72),
+      transparent
+    );
+  filter: blur(20px);
+  opacity: 0.85;
+}
+
+.rasa-mockup::before {
+  content: '';
+  position: absolute;
+  inset: 12px 12px auto 12px;
+  height: 42px;
+  border-radius: 18px 18px 32px 32px;
   background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(44, 153, 255, 0.78),
-    transparent
+    180deg,
+    rgba(255, 255, 255, 0.12),
+    rgba(255, 255, 255, 0.02)
   );
-  filter: blur(14px);
+  pointer-events: none;
 }
 
 [dir='rtl'] .rasa-mockup {
@@ -673,13 +873,32 @@ html {
 
 .rasa-chat-panel,
 .rasa-video-panel {
-  border-radius: 16px;
-  background: rgba(5, 21, 43, 0.76);
-  border: 1px solid rgba(255, 255, 255, 0.055);
+  position: relative;
+  border-radius: 18px;
+  background:
+    linear-gradient(180deg, rgba(7, 22, 42, 0.78), rgba(5, 21, 43, 0.7));
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .rasa-chat-panel {
   padding: 14px;
+}
+
+.rasa-chat-panel::before,
+.rasa-video-panel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.09),
+    transparent 18%,
+    transparent 62%,
+    rgba(81, 185, 255, 0.08)
+  );
+  opacity: 0.45;
 }
 
 .rasa-panel-top,
@@ -713,7 +932,8 @@ html {
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background: linear-gradient(145deg, #ffd29e, #895438);
+  background: linear-gradient(145deg, #ffd79f, #9a5d3b);
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.04);
 }
 
 .rasa-chat-line b,
@@ -737,6 +957,7 @@ html {
   border: 1px solid rgba(30, 126, 255, 0.16);
   border-radius: 13px;
   background: rgba(17, 47, 83, 0.72);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 .rasa-live-note b {
@@ -765,6 +986,7 @@ html {
   border-radius: 50%;
   background: #ff424c;
   box-shadow: 0 0 0 5px rgba(255, 66, 76, 0.11);
+  animation: rasa-pulse 2.8s ease-in-out infinite;
 }
 
 .rasa-rec time {
@@ -775,6 +997,7 @@ html {
 }
 
 .rasa-video-panel {
+  position: relative;
   padding: 13px;
 }
 
@@ -927,6 +1150,12 @@ html {
   color: #b8d9e8;
   font-size: 10px;
   font-weight: 700;
+}
+
+.rasa-video-panel .rasa-status {
+  padding: 10px 14px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.03);
 }
 
 .rasa-section {
@@ -1774,6 +2003,10 @@ main#main-content {
     padding: 0 14px;
   }
 
+  .rasa-brand-logo {
+    height: 32px;
+  }
+
   .rasa-nav-links {
     display: none;
   }
@@ -1936,6 +2169,30 @@ main#main-content {
   }
 }
 
+@keyframes rasa-line-drift {
+  0%,
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0.78;
+  }
+  50% {
+    stroke-dashoffset: -26;
+    opacity: 0.94;
+  }
+}
+
+@keyframes rasa-node-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.88;
+  }
+  50% {
+    transform: scale(1.18);
+    opacity: 1;
+  }
+}
+
 @keyframes rasa-dot-float {
   0%,
   100% {
@@ -1990,7 +2247,10 @@ main#main-content {
 
   .rasa-dot-dot,
   .rasa-orbits,
-  .rasa-mockup {
+  .rasa-mockup,
+  .rasa-line-arc,
+  .rasa-node,
+  .rasa-rec span {
     animation: none !important;
   }
 }
