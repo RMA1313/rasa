@@ -8,6 +8,7 @@ import { closePermissionsDialog, permissionsStore } from '@/stores/permissions'
 import { useTranslation } from 'react-i18next'
 import { injectIconIntoTranslation } from '@/utils/translation'
 import { isSafari } from '@/utils/livekit'
+import { branding } from '@/features/rasa/config/branding'
 
 /**
  * Singleton component - ensures permissions sync runs only once across the app.
@@ -62,8 +63,6 @@ export const Permissions = () => {
     }
   }, [permissions])
 
-  const appTitle = `${import.meta.env.VITE_APP_TITLE}`
-
   return (
     <Dialog
       isOpen={permissions.isPermissionDialogOpen}
@@ -71,7 +70,7 @@ export const Permissions = () => {
       type="flex"
       title=""
       aria-label={t(`heading.${permissionLabel}`, {
-        appTitle,
+        appTitle: branding.appName,
       })}
       onClose={closePermissionsDialog}
     >
@@ -102,7 +101,7 @@ export const Permissions = () => {
         >
           <H lvl={2}>
             {t(`heading.${permissionLabel}`, {
-              appTitle,
+              appTitle: branding.appName,
             })}
           </H>
           <ol className={css({ listStyle: 'decimal', paddingLeft: '24px' })}>

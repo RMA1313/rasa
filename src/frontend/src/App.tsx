@@ -15,10 +15,11 @@ import { queryClient } from '@/api/queryClient'
 import { AppInitialization } from '@/components/AppInitialization'
 import { useIsSdkContext } from '@/features/sdk/hooks/useIsSdkContext'
 import { useApplyA11yFonts } from '@/hooks/useApplyA11yFonts'
+import { branding } from '@/features/rasa/config/branding'
 
 function App() {
   const { i18n } = useTranslation()
-  useTitle(import.meta.env.VITE_APP_TITLE ?? '')
+  useTitle(branding.defaultTitle)
 
   const isSDKContext = useIsSdkContext()
   useApplyA11yFonts()

@@ -1,8 +1,7 @@
 import { A, Text } from '@/primitives'
 import { useTranslation } from 'react-i18next'
 import { useConfig } from '@/api/useConfig'
-
-const appTitle = import.meta.env.VITE_APP_TITLE ?? 'LaSuite Meet'
+import { branding } from '@/features/rasa/config/branding'
 
 export const MoreLink = () => {
   const { t } = useTranslation('home')
@@ -17,9 +16,9 @@ export const MoreLink = () => {
         target="_blank"
         rel="noopener noreferrer"
         externalIcon
-        aria-label={t('moreLinkLabel', { appTitle })}
+        aria-label={t('moreLinkLabel', { appTitle: branding.appName })}
       >
-        {t('moreLink')} {t('moreAbout', { appTitle })}
+        {t('moreLink')} {t('moreAbout', { appTitle: branding.appName })}
       </A>
     </Text>
   )

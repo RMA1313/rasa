@@ -15,8 +15,7 @@ import { LoadingScreen } from '@/components/LoadingScreen'
 import { fetchRecording } from '../api/fetchRecording'
 import { RecordingStatus } from '@/features/recording'
 import { useConfig } from '@/api/useConfig'
-
-const APP_TITLE = import.meta.env.VITE_APP_TITLE ?? ''
+import { branding } from '@/features/rasa/config/branding'
 
 const BetaBadge = () => (
   <span
@@ -59,11 +58,11 @@ export const RecordingDownload = () => {
     data?.status === RecordingStatus.FailedToStop
 
   const pageTitle = useMemo(() => {
-    if (isError) return `${APP_TITLE} - ${t('error.title')}`
-    if (data && !isSaved) return `${APP_TITLE} - ${t('unsaved.title')}`
-    if (data?.is_expired) return `${APP_TITLE} - ${t('expired.title')}`
-    if (data && isSaved) return `${APP_TITLE} - ${t('success.title')}`
-    return APP_TITLE
+    if (isError) return `${branding.defaultTitle} - ${t('error.title')}`
+    if (data && !isSaved) return `${branding.defaultTitle} - ${t('unsaved.title')}`
+    if (data?.is_expired) return `${branding.defaultTitle} - ${t('expired.title')}`
+    if (data && isSaved) return `${branding.defaultTitle} - ${t('success.title')}`
+    return branding.defaultTitle
   }, [isError, data, isSaved, t])
 
   useTitle(pageTitle)

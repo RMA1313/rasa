@@ -1,8 +1,7 @@
 import { useTitle } from 'hoofd'
 import { useRoomData } from './useRoomData'
 import { useMemo } from 'react'
-
-const APP_TITLE = import.meta.env.VITE_APP_TITLE ?? ''
+import { branding } from '@/features/rasa/config/branding'
 
 /**
  * Updates the browser tab title with the room name to help users easily find
@@ -14,14 +13,14 @@ export const useRoomPageTitle = () => {
 
   const pageTitle = useMemo(() => {
     if (!roomData) {
-      return APP_TITLE
+      return branding.defaultTitle
     }
 
     const roomLabel = roomData.name || roomData.slug || ''
 
-    if (!roomLabel) return APP_TITLE
+    if (!roomLabel) return branding.defaultTitle
 
-    return `${APP_TITLE} - ${roomLabel}  `
+    return `${branding.defaultTitle} - ${roomLabel}  `
   }, [roomData])
 
   useTitle(pageTitle)

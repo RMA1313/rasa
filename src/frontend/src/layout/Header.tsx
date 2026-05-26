@@ -13,11 +13,12 @@ import { LoginButton } from '@/components/LoginButton'
 import { VisualOnlyTooltip } from '@/primitives/VisualOnlyTooltip'
 
 import { useLoginHint } from '@/hooks/useLoginHint'
+import { branding } from '@/features/rasa/config/branding'
 
 const Logo = () => (
   <img
-    src="/assets/logo.svg"
-    alt={`${import.meta.env.VITE_APP_TITLE}`}
+    src={branding.logoPath}
+    alt={branding.logoAlt}
     className={`Header-logo ${css({
       maxHeight: { base: '30px', sm: '40px' },
       marginTop: { base: '10px', sm: '5px' },
