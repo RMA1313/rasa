@@ -25,6 +25,7 @@ import {
   RiLinksLine,
   RiLayoutGridLine,
 } from '@remixicon/react'
+import { branding } from '../../config/branding'
 import { RasaLocale, rasaContent } from '../content'
 
 type Props = {
@@ -101,13 +102,18 @@ export const RasaSections = ({ locale, content, onLocaleChange }: Props) => {
 
   return (
     <div className="rasa-page" dir={content.dir} data-locale={locale}>
+      <HeroDecorations />
       <nav className="rasa-nav" aria-label="Rasa">
         <div className="rasa-navbar-inner">
           <a className="rasa-brand" href="/">
-            <span className="rasa-logo" aria-hidden="true">
-              <span />
-            </span>
-            <span>رسا</span>
+            <img
+              className="rasa-brand-logo"
+              src={branding.logoPath}
+              alt={branding.logoAlt}
+              width="148"
+              height="36"
+              decoding="async"
+            />
           </a>
           <div className="rasa-nav-links" aria-label="Primary">
             {content.nav.map((item, index) => (
@@ -160,7 +166,6 @@ export const RasaSections = ({ locale, content, onLocaleChange }: Props) => {
       <header className="rasa-hero" id="product">
         <div className="rasa-orbits" aria-hidden="true" />
         <div className="rasa-hero-copy">
-          <span className="rasa-badge">{content.badge}</span>
           <h1>
             <span className="rasa-headline-line">{content.headline[0]}</span>
             <span className="rasa-headline-line">{content.headline[1]}</span>
@@ -349,10 +354,14 @@ export const RasaSections = ({ locale, content, onLocaleChange }: Props) => {
         <div className="rasa-footer-inner">
           <div className="rasa-footer-brand">
             <a className="rasa-brand rasa-brand-footer" href="/">
-              <span className="rasa-logo" aria-hidden="true">
-                <span />
-              </span>
-              <span>رسا</span>
+              <img
+                className="rasa-brand-logo"
+                src="rasa/logo-light.png"
+                alt={branding.logoAlt}
+                width="148"
+                height="36"
+                decoding="async"
+              />
             </a>
             <p>{content.footerLead}</p>
           </div>
@@ -481,3 +490,43 @@ const VideoTile = ({
     <small>{name}</small>
   </div>
 )
+
+const HeroDecorations = () => {
+  const dots = [
+    { className: 'rasa-dot-dot rasa-dot-a', size: 18 },
+    { className: 'rasa-dot-dot rasa-dot-b', size: 12 },
+    { className: 'rasa-dot-dot rasa-dot-c', size: 24 },
+    { className: 'rasa-dot-dot rasa-dot-d', size: 10 },
+    { className: 'rasa-dot-dot rasa-dot-e', size: 16 },
+    { className: 'rasa-dot-dot rasa-dot-f', size: 14 },
+    { className: 'rasa-dot-dot rasa-dot-g', size: 20 },
+    { className: 'rasa-dot-dot rasa-dot-h', size: 11 },
+  ]
+
+  return (
+    <div className="rasa-hero-decor" aria-hidden="true">
+      <svg
+        className="rasa-hero-lines"
+        viewBox="0 0 1200 780"
+        preserveAspectRatio="none"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <path d="M88 228C205 132 343 92 488 126c114 27 171 102 276 121 126 23 245-39 327-131" />
+        <path d="M106 516c130-56 264-40 362 29 89 63 187 99 316 76 121-22 208-90 332-198" />
+        <path d="M158 180c92 21 160 70 231 134 74 67 147 95 238 92 97-3 177-48 255-106 92-68 164-106 286-89" />
+      </svg>
+      {dots.map((dot, index) => (
+        <span
+          key={dot.className}
+          className={dot.className}
+          style={{
+            width: `${dot.size}px`,
+            height: `${dot.size}px`,
+            animationDelay: `${index * 0.35}s`,
+          }}
+        />
+      ))}
+    </div>
+  )
+}

@@ -68,6 +68,113 @@
   scroll-behavior: smooth;
 }
 
+.rasa-hero-decor {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: clip;
+  z-index: 0;
+}
+
+.rasa-hero-lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: rgba(86, 131, 230, 0.28);
+  stroke-width: 1;
+  stroke-linecap: round;
+  stroke-dasharray: 1 7;
+  opacity: 0.36;
+}
+
+.rasa-dot-dot {
+  position: absolute;
+  display: block;
+  border-radius: 999px;
+  pointer-events: none;
+  opacity: 0.96;
+  box-shadow:
+    0 0 0 12px rgba(255, 255, 255, 0.46),
+    0 18px 36px rgba(40, 90, 170, 0.12);
+  animation-name: rasa-dot-float;
+  animation-duration: var(--dot-duration, 12s);
+  animation-delay: var(--dot-delay, 0s);
+  animation-direction: var(--dot-direction, normal);
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+  will-change: transform, opacity;
+}
+
+.rasa-dot-a {
+  inset-inline-start: 7%;
+  top: 11%;
+  background: linear-gradient(180deg, #ffcf5a, #ff9f35);
+  --dot-duration: 13s;
+}
+
+.rasa-dot-b {
+  inset-inline-start: 19%;
+  top: 21%;
+  background: linear-gradient(180deg, #7bc9ff, #2d7bff);
+  --dot-duration: 14s;
+  --dot-delay: -2.2s;
+  --dot-direction: reverse;
+}
+
+.rasa-dot-c {
+  inset-inline-start: 34%;
+  top: 8%;
+  background: linear-gradient(180deg, #ff8cc7, #ff5ea6);
+  --dot-duration: 15s;
+  --dot-delay: -4s;
+}
+
+.rasa-dot-d {
+  inset-inline-start: 67%;
+  top: 14%;
+  background: linear-gradient(180deg, #8ef0dc, #22c7a4);
+  --dot-duration: 16s;
+  --dot-delay: -1.4s;
+  --dot-direction: reverse;
+}
+
+.rasa-dot-e {
+  inset-inline-start: 79%;
+  top: 34%;
+  background: linear-gradient(180deg, #ff9e86, #ff6d5d);
+  --dot-duration: 12.5s;
+  --dot-delay: -5.3s;
+}
+
+.rasa-dot-f {
+  inset-inline-start: 12%;
+  top: 62%;
+  background: linear-gradient(180deg, #b28cff, #7d52ff);
+  --dot-duration: 14.5s;
+  --dot-delay: -3.1s;
+  --dot-direction: reverse;
+}
+
+.rasa-dot-g {
+  inset-inline-start: 47%;
+  top: 67%;
+  background: linear-gradient(180deg, #7bd6ff, #49b5ff);
+  --dot-duration: 15.5s;
+  --dot-delay: -6.4s;
+}
+
+.rasa-dot-h {
+  inset-inline-start: 88%;
+  top: 58%;
+  background: linear-gradient(180deg, #ffd96b, #ffb347);
+  --dot-duration: 13.8s;
+  --dot-delay: -2.6s;
+  --dot-direction: reverse;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -138,32 +245,35 @@ html {
   justify-self: end;
 }
 
-.rasa-logo {
-  position: relative;
-  display: inline-grid;
-  place-items: center;
-  width: 34px;
+.rasa-brand-logo {
+  display: block;
+  width: auto;
   height: 34px;
-  border-radius: 10px;
-  background: linear-gradient(145deg, #0d4cff, #0c7dff);
-  box-shadow: 0 10px 22px rgba(18, 88, 244, 0.28);
+  object-fit: contain;
+  flex: 0 0 auto;
 }
 
-.rasa-logo::before {
-  content: '';
-  width: 19px;
-  height: 19px;
-  border: 2px solid #fff;
-  border-radius: 6px;
-  transform: rotate(30deg);
+.rasa-hero-brand {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  margin-bottom: 18px;
+  border-radius: 20px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(246, 250, 255, 0.82));
+  border: 1px solid rgba(17, 77, 195, 0.1);
+  box-shadow:
+    0 16px 32px rgba(31, 61, 110, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.84);
 }
 
-.rasa-logo span {
-  position: absolute;
-  width: 8px;
-  height: 8px;
-  border: 2px solid #fff;
-  border-radius: 3px;
+.rasa-hero-brand-logo {
+  display: block;
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
 }
 
 .rasa-nav-links {
@@ -350,6 +460,16 @@ html {
   min-height: calc(100vh - 96px);
   margin: 0 auto;
   padding: 56px 0 78px;
+}
+
+.rasa-page > .rasa-nav,
+.rasa-page > .rasa-hero,
+.rasa-page > .rasa-section,
+.rasa-page > .rasa-tech-trust,
+.rasa-page > .rasa-cta,
+.rasa-page > .rasa-footer {
+  position: relative;
+  z-index: 1;
 }
 
 [dir='rtl'] .rasa-hero-copy {
@@ -1525,6 +1645,10 @@ main#main-content {
 }
 
 @media (max-width: 1050px) {
+  .rasa-hero-decor {
+    opacity: 0.72;
+  }
+
   .rasa-nav,
   .rasa-hero,
   .rasa-section,
@@ -1564,6 +1688,10 @@ main#main-content {
     width: min(560px, 100%);
     margin: 0 auto;
     animation: none;
+  }
+
+  .rasa-dot-dot {
+    transform: scale(0.88);
   }
 
   .rasa-card-row {
@@ -1618,6 +1746,10 @@ main#main-content {
 }
 
 @media (max-width: 900px) {
+  .rasa-hero-decor {
+    display: none;
+  }
+
   .rasa-page {
     background:
       radial-gradient(
@@ -1804,6 +1936,22 @@ main#main-content {
   }
 }
 
+@keyframes rasa-dot-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.9;
+  }
+  33% {
+    transform: translate3d(6px, -10px, 0) scale(1.03);
+    opacity: 1;
+  }
+  66% {
+    transform: translate3d(-4px, 8px, 0) scale(0.97);
+    opacity: 0.88;
+  }
+}
+
 @keyframes rasa-pulse {
   0%,
   100% {
@@ -1838,5 +1986,11 @@ main#main-content {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+
+  .rasa-dot-dot,
+  .rasa-orbits,
+  .rasa-mockup {
+    animation: none !important;
   }
 }
