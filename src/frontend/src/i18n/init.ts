@@ -4,7 +4,7 @@ import { initReactI18next } from 'react-i18next'
 import LanguageDetector from 'i18next-browser-languagedetector'
 import { getLanguageDirection } from './direction'
 const i18nDefaultNamespace = 'global'
-const fallbackLng = 'fr'
+const fallbackLng = 'fa'
 
 i18n.setDefaultNamespace(i18nDefaultNamespace)
 i18n
@@ -21,6 +21,7 @@ i18n
     ns: i18nDefaultNamespace,
     detection: {
       order: ['localStorage', 'navigator'],
+      caches: ['localStorage'],
     },
     interpolation: {
       escapeValue: false,
