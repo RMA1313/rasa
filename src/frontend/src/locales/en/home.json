@@ -1,26 +1,26 @@
 {
-  "createMeeting": "Create a meeting",
-  "heading": "Simple and Secure Video Conferencing",
-  "intro": "Communicate and work with ease, without compromising your sovereignty",
+  "createMeeting": "New meeting",
+  "heading": "Secure online meetings for professional teams",
+  "intro": "Rasa provides an online meeting infrastructure for organizations that need security, data ownership, and simplicity in one place.",
   "joinInputError": "Use a meeting link or code. Examples:",
   "joinInputExample": "URL or 10-letter code",
   "joinInputLabel": "Meeting link",
-  "joinInputSubmit": "Join meeting",
+  "joinInputSubmit": "Join",
   "joinMeeting": "Join a meeting",
   "joinMeetingTipContent": "You can join a meeting by pasting its full link in the browser's address bar.",
   "joinMeetingTipHeading": "Did you know?",
-  "loginToCreateMeeting": "Login to create a meeting",
+  "loginToCreateMeeting": "Sign in to create a meeting",
   "moreLinkLabel": "Learn more about {{appTitle}} - new tab",
   "moreLink": "Learn more",
   "moreAbout": "about {{appTitle}}",
   "createMenu": {
-    "laterOption": "Create a meeting for a later date",
-    "instantOption": "Start an instant meeting"
+    "laterOption": "Schedule a meeting",
+    "instantOption": "Start a meeting"
   },
   "laterMeetingDialog": {
-    "heading": "Your connection details",
-    "description": "Share this information with the guests. They will be able to join the meeting without needing to sign in. This meeting is permanent and can be reused.",
-    "permissions": "People with this link do not need your permission to join this meeting.",
+    "heading": "Access details",
+    "description": "Share this information with guests. They can join without signing in, and this link can be reused later.",
+    "permissions": "People with this link do not need your permission to join the meeting.",
     "copy": "Copy information",
     "copied": "Information copied to clipboard",
     "copyUrl": "Copy the meeting link",
@@ -45,16 +45,16 @@
       "tooltip": "Fill out the form"
     },
     "slide1": {
-      "title": "Make the switch to simplicity. Try us now!",
-      "body": "Discover an intuitive and accessible solution, designed for all public agents, their partners, and much more."
+      "title": "Start quickly, without the noise",
+      "body": "Create a meeting in seconds and get straight to the conversation, with no extra setup."
     },
     "slide2": {
-      "title": "Host group calls without limits",
-      "body": "Unlimited time meetings, with smooth and high-quality communication, no matter the group size."
+      "title": "Built for team and organization use",
+      "body": "Designed for daily collaboration, internal meetings, and controlled organizational deployments."
     },
     "slide3": {
-      "title": "Transform your meetings with AI",
-      "body": "Get accurate and actionable transcripts to boost your productivity. Feature in beta—try it now!"
+      "title": "Advanced capabilities, ready when you are",
+      "body": "From transcription to recording, use the tools you need to manage and document meetings."
     },
     "carouselLabel": "Introduction slideshow",
     "slidePosition": "Slide {{current}} of {{total}}"

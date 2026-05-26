@@ -32,9 +32,40 @@ const Body = styled('p', {
 
 const Image = styled('img', {
   base: {
-    maxHeight: '362px',
-    height: '100%',
-    width: 'fit-content',
+    display: 'block',
+    maxHeight: '330px',
+    height: 'auto',
+    width: '100%',
+    objectFit: 'contain',
+    borderRadius: '1.25rem',
+    boxShadow: '0 18px 36px rgba(2, 21, 47, 0.12)',
+  },
+})
+
+const ArtFrame = styled('div', {
+  base: {
+    display: 'grid',
+    placeItems: 'center',
+    width: '100%',
+    maxWidth: '24rem',
+    padding: '1rem',
+    borderRadius: '1.5rem',
+    background:
+      'linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(244, 248, 255, 0.78))',
+    border: '1px solid',
+    borderColor: 'greyscale.200',
+    boxShadow:
+      '0 18px 42px rgba(2, 21, 47, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.8)',
+    position: 'relative',
+    overflow: 'hidden',
+    _before: {
+      content: '""',
+      position: 'absolute',
+      inset: 0,
+      background:
+        'linear-gradient(135deg, rgba(93, 154, 255, 0.08), transparent 36%, transparent 64%, rgba(54, 213, 244, 0.06))',
+      pointerEvents: 'none',
+    },
   },
 })
 
@@ -246,7 +277,9 @@ export const IntroSlider = () => {
               visible={index === slideIndex}
               key={index}
             >
-              <Image src={slide.src} alt="" role="presentation" />
+              <ArtFrame>
+                <Image src={slide.src} alt="" role="presentation" />
+              </ArtFrame>
               <TextAnimation visible={index == slideIndex}>
                 <Heading>{t(`${slide.key}.title`)}</Heading>
                 <Body>{t(`${slide.key}.body`)}</Body>

@@ -133,6 +133,7 @@ const Heading = styled('h1', {
       fontSize: '3rem',
       lineHeight: '3.2rem',
     },
+    textAlign: 'start',
   },
 })
 
@@ -143,6 +144,7 @@ const IntroText = styled('div', {
     lineHeight: '1.5rem',
     textWrap: 'balance',
     maxWidth: '32rem',
+    textAlign: 'start',
   },
 })
 
@@ -257,7 +259,6 @@ export const Home = () => {
                 <JoinMeetingDialog />
               </DialogTrigger>
             </div>
-            <Separator />
             <MoreLink />
           </LeftColumn>
           <RightColumn>

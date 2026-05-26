@@ -110,8 +110,8 @@ export const RasaSections = ({ locale, content, onLocaleChange }: Props) => {
               className="rasa-brand-logo"
               src={branding.logoPath}
               alt={branding.logoAlt}
-              width="148"
-              height="86"
+              width="176"
+              height="40"
               decoding="async"
             />
           </a>
@@ -127,9 +127,20 @@ export const RasaSections = ({ locale, content, onLocaleChange }: Props) => {
             ))}
           </div>
           <div className="rasa-nav-actions">
-            <a className="rasa-btn rasa-btn-primary" href="/meet">
-              {content.start}
-            </a>
+            <div className="rasa-nav-actions-surface">
+              <button
+                className="rasa-language"
+                onClick={onLocaleChange}
+                type="button"
+                aria-label={isFa ? 'Switch language to English' : 'تغییر زبان به فارسی'}
+              >
+                <span aria-hidden="true">{isFa ? 'FA' : 'EN'}</span>
+                <RiArrowDownSLine size={16} aria-hidden="true" />
+              </button>
+              <a className="rasa-btn rasa-btn-primary" href="/meet">
+                {content.start}
+              </a>
+            </div>
             <button
               className="rasa-menu-toggle"
               type="button"
