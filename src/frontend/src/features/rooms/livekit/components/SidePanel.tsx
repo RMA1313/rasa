@@ -15,6 +15,7 @@ import { Tools } from './Tools'
 import { Info } from './Info'
 import { HStack } from '@/styled-system/jsx'
 import { useReactionsToolbar } from '@/features/reactions/hooks/useReactionsToolbar'
+import { getLanguageDirection } from '@/i18n/direction'
 
 type StyledSidePanelProps = {
   title: string
@@ -27,6 +28,7 @@ type StyledSidePanelProps = {
   onBack: () => void
   backButtonLabel: string
   isReactionToolbarOpen?: boolean
+  isRtl: boolean
 }
 
 const StyledSidePanel = ({
@@ -40,6 +42,7 @@ const StyledSidePanel = ({
   isSubmenu = false,
   onBack,
   backButtonLabel,
+  isRtl,
 }: StyledSidePanelProps) => (
   <aside
     className={css({
@@ -81,11 +84,18 @@ const StyledSidePanel = ({
           variant="secondaryText"
           size="sm"
           square
-          className={css({ marginRight: '0.5rem', marginLeft: '1rem' })}
+          className={css({
+            marginInlineEnd: '0.5rem',
+            marginInlineStart: '1rem',
+          })}
           aria-label={backButtonLabel}
           onPress={onBack}
         >
-          <RiArrowLeftLine size={20} aria-hidden="true" />
+          <RiArrowLeftLine
+            size={20}
+            aria-hidden="true"
+            style={{ transform: isRtl ? 'scaleX(-1)' : undefined }}
+          />
         </Button>
       )}
       <Heading
@@ -93,11 +103,22 @@ const StyledSidePanel = ({
         level={1}
         className={text({ variant: 'h2' })}
         style={{
-          paddingLeft: isSubmenu ? 0 : '1.5rem',
+          paddingInlineStart: isSubmenu
+            ? 0
+            : isRtl
+              ? '2.5rem'
+              : '1.5rem',
+          paddingInlineEnd: isSubmenu
+            ? 0
+            : isRtl
+              ? '1.5rem'
+              : '2.5rem',
           paddingTop: '1rem',
           display: isClosed ? 'none' : 'flex',
           justifyContent: 'start',
           alignItems: 'center',
+          width: '100%',
+          boxSizing: 'border-box',
         }}
       >
         {title}
@@ -157,7 +178,7 @@ export const SidePanel = () => {
     isSubPanelOpen,
     activeSubPanelId,
   } = useSidePanel()
-  const { t } = useTranslation('rooms', { keyPrefix: 'sidePanel' })
+  const { t, i18n } = useTranslation('rooms', { keyPrefix: 'sidePanel' })
   const title = t(`heading.${activeSubPanelId || activePanelId}`)
 
   const { isOpen: isReactionToolbarOpen } = useReactionsToolbar()
@@ -177,6 +198,7 @@ export const SidePanel = () => {
       isSubmenu={isSubPanelOpen}
       isReactionToolbarOpen={isReactionToolbarOpen}
       backButtonLabel={t('backToTools')}
+      isRtl={getLanguageDirection(i18n.language) === 'rtl'}
       onBack={() => (layoutStore.activeSubPanelId = null)}
     >
       <Panel isOpen={isParticipantsOpen}>
