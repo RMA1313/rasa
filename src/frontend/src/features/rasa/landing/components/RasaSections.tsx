@@ -280,43 +280,7 @@ export const RasaSections = ({ locale, content, onLocaleChange }: Props) => {
           <h2>{content.trustTitle2}</h2>
           <p>{content.trustText2}</p>
         </div>
-        <div className="rasa-tech-mockup" aria-hidden="true">
-          <div className="rasa-tech-mockup-header">
-            <RiServerLine size={18} />
-            <span>Enterprise control plane</span>
-          </div>
-          <div className="rasa-tech-mockup-grid">
-            <div>
-              <RiShieldKeyholeLine size={20} />
-              <span>Security</span>
-            </div>
-            <div>
-              <RiLinksLine size={20} />
-              <span>API</span>
-            </div>
-            <div>
-              <RiLayoutGridLine size={20} />
-              <span>Scale</span>
-            </div>
-            <div>
-              <RiDatabase2Line size={20} />
-              <span>Data</span>
-            </div>
-          </div>
-          <div className="rasa-tech-mockup-badges">
-          {content.trustBadges.slice(0, 4).map((badge, index) => {
-            const Icon = badgeIcons[index]
-            return (
-              <span key={badge}>
-                <span className="rasa-badge-icon" aria-hidden="true">
-                  <Icon size={14} aria-hidden="true" />
-                </span>
-                {badge}
-              </span>
-            )
-          })}
-          </div>
-        </div>
+        
         <div className="rasa-badge-row">
           {content.trustBadges.map((badge, index) => {
             const Icon = badgeIcons[index % badgeIcons.length]
