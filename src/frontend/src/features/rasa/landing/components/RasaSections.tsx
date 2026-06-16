@@ -1,509 +1,127 @@
-import { useEffect, useState } from 'react'
-import {
-  RiArrowDownSLine,
-  RiCheckLine,
-  RiCloudLine,
-  RiFileTextLine,
-  RiGlobalLine,
-  RiGroupLine,
-  RiLockLine,
-  RiMailFill,
-  RiMenuLine,
-  RiMicLine,
-  RiPhoneLine,
-  RiRecordCircleLine,
-  RiShieldCheckLine,
-  RiShieldKeyholeLine,
-  RiSparklingLine,
-  RiSpeedLine,
-  RiServerLine,
-  RiVidiconLine,
-  RiWifiOffLine,
-  RiDatabase2Line,
-  RiUserSettingsLine,
-  RiSettings3Line,
-  RiLinksLine,
-  RiLayoutGridLine,
-} from '@remixicon/react'
+import { Suspense, lazy, useEffect, useMemo, useState } from 'react'
+import { RiArrowLeftLine, RiArrowRightLine, RiShieldCheckLine } from '@remixicon/react'
 import { branding } from '../../config/branding'
-import { RasaLocale, rasaContent } from '../content'
+import { rasaContent } from '../content'
+import { CommunicationWave } from './CommunicationWave'
+import { ScalePath } from './ScalePath'
+import { FeatureOrbit } from './FeatureOrbit'
+import { InfrastructureBackbone } from './InfrastructureBackbone'
 
-type Props = {
-  locale: RasaLocale
-  content: (typeof rasaContent)[RasaLocale]
-  onLocaleChange: () => void
-}
+const HeroGlobe = lazy(() => import('./HeroGlobe'))
 
-const navTargets = ['#product', '#capabilities', '#security', '#deployment', '#pricing', '#resources']
-
-const featureIcons = [
-  RiVidiconLine,
-  RiGroupLine,
-  RiShieldCheckLine,
-  RiServerLine,
-  RiLockLine,
-  RiPhoneLine,
-  RiWifiOffLine,
-  RiCloudLine,
-  RiUserSettingsLine,
-  RiSettings3Line,
-  RiLayoutGridLine,
-  RiLinksLine,
-  RiShieldKeyholeLine,
-  RiDatabase2Line,
-  RiSpeedLine,
-  RiRecordCircleLine,
-  RiFileTextLine,
-  RiGlobalLine,
-]
-
-const badgeIcons = [RiShieldCheckLine, RiSparklingLine, RiServerLine, RiSpeedLine, RiLockLine]
-
-export const RasaSections = ({ locale, content, onLocaleChange }: Props) => {
-  const isFa = locale === 'fa'
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [activeSection, setActiveSection] = useState('product')
-  const [activeTab, setActiveTab] = useState(0)
+export const RasaSections = () => {
+  const content = rasaContent.fa
+  const sectionIds = useMemo(() => ['hero', 'scale', 'product', 'security', 'final'], [])
+  const [visibleSections, setVisibleSections] = useState<string[]>(['hero'])
 
   useEffect(() => {
-    const observers = navTargets
-      .map((target) => target.slice(1))
+    const elements = sectionIds
       .map((id) => document.getElementById(id))
-      .filter(Boolean)
-      .map((element) => {
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                setActiveSection(entry.target.id)
-              }
-            })
-          },
-          { rootMargin: '-35% 0px -50% 0px', threshold: 0.1 }
-        )
-        observer.observe(element as Element)
-        return observer
-      })
+      .filter((el): el is HTMLElement => Boolean(el))
 
-    return () => observers.forEach((observer) => observer.disconnect())
-  }, [])
+    const observer = new IntersectionObserver(
+      (entries) => {
+        setVisibleSections((current) => {
+          const next = new Set(current)
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) next.add(entry.target.id)
+          })
+          return Array.from(next)
+        })
+      },
+      { threshold: 0.22, rootMargin: '-8% 0px -12% 0px' }
+    )
 
-  useEffect(() => {
-    const closeOnEscape = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') setMobileMenuOpen(false)
-    }
-    window.addEventListener('keydown', closeOnEscape)
-    return () => window.removeEventListener('keydown', closeOnEscape)
-  }, [])
-
-  useEffect(() => {
-    setMobileMenuOpen(false)
-  }, [locale])
+    elements.forEach((el) => observer.observe(el))
+    return () => observer.disconnect()
+  }, [sectionIds])
 
   return (
-    <div className="rasa-page" dir={content.dir} data-locale={locale}>
-      <HeroDecorations />
+    <main className="rasa-page" dir="rtl" data-locale="fa">
+      <div className="rasa-page-grid" aria-hidden="true" />
       <nav className="rasa-nav" aria-label="Rasa">
-        <div className="rasa-navbar-inner">
-          <a className="rasa-brand" href="/">
-            <img
-              className="rasa-brand-logo"
-              src={branding.logoPath}
-              alt={branding.logoAlt}
-              width="176"
-              height="40"
-              decoding="async"
-            />
+        <a className="rasa-brand" href="/" aria-label={branding.logoAlt}>
+          <img src={branding.logoLightPath} alt={branding.logoAlt} width="80" height="32" />
+        </a>
+        <div className="rasa-nav-actions">
+          <a className="rasa-nav-link" href="#product">
+            محصول
           </a>
-          <div className="rasa-nav-links" aria-label="Primary">
-            {content.nav.map((item, index) => (
-              <a
-                href={navTargets[index]}
-                key={item}
-                className={activeSection === navTargets[index].slice(1) ? 'is-active' : ''}
-              >
-                {item}
-              </a>
-            ))}
-          </div>
-          <div className="rasa-nav-actions">
-            <div className="rasa-nav-actions-surface">
-              <button
-                className="rasa-language"
-                onClick={onLocaleChange}
-                type="button"
-                aria-label={isFa ? 'Switch language to English' : 'تغییر زبان به فارسی'}
-              >
-                <span aria-hidden="true">{isFa ? 'FA' : 'EN'}</span>
-                <RiArrowDownSLine size={16} aria-hidden="true" />
-              </button>
-              <a className="rasa-btn rasa-btn-primary" href="/meet">
-                {content.start}
-              </a>
-            </div>
-            <button
-              className="rasa-menu-toggle"
-              type="button"
-              onClick={() => setMobileMenuOpen((open) => !open)}
-              aria-expanded={mobileMenuOpen}
-              aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
-            >
-              <RiMenuLine size={18} aria-hidden="true" />
-            </button>
-          </div>
-        </div>
-        <div className={`rasa-mobile-menu ${mobileMenuOpen ? 'is-open' : ''}`}>
-          {content.nav.map((item, index) => (
-            <a
-              href={navTargets[index]}
-              key={item}
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              {item}
-            </a>
-          ))}
+          <a className="rasa-nav-link" href="/meet">
+            ورود
+          </a>
         </div>
       </nav>
 
-      <header className="rasa-hero" id="product">
-        <div className="rasa-orbits" aria-hidden="true" />
+      <section className={`rasa-section rasa-hero-section ${visibleSections.includes('hero') ? 'is-visible' : ''}`} id="hero">
         <div className="rasa-hero-copy">
+          <p className="rasa-eyebrow">رسا</p>
           <h1>
-            <span className="rasa-headline-line">{content.headline[0]}</span>
-            <span className="rasa-headline-line">{content.headline[1]}</span>
+            <span>هر گفتگو،</span>
+            <span className="rasa-title-accent">رسا</span>
           </h1>
-          <p>{content.lead}</p>
-          <div className="rasa-hero-buttons">
-            <a className="rasa-btn rasa-btn-primary rasa-btn-large" href="/meet">
+          <p className="rasa-hero-subtitle">
+            از جلسات روزمره تا زیرساخت ارتباطی سازمان شما؛ رسا ارتباطات آنلاین را ساده، امن و قابل اتکا می‌کند.
+          </p>
+          <div className="rasa-hero-actions">
+            <a className="rasa-btn rasa-btn-primary" href="/meet">
               {content.primary}
-              <RiVidiconLine size={20} aria-hidden="true" />
+              <RiArrowLeftLine size={18} aria-hidden="true" />
             </a>
-            <a className="rasa-btn rasa-btn-ghost rasa-btn-large" href="#deployment">
+            <a className="rasa-btn rasa-btn-secondary" href="#final">
               {content.secondary}
-              <RiSparklingLine size={19} aria-hidden="true" />
+              <RiArrowRightLine size={18} aria-hidden="true" />
             </a>
           </div>
-          <div className="rasa-trust-row">
-            {content.trust.map((item, index) => (
-              <span key={item}>
-                {index === 0 && <span className="rasa-mini-badge">HD</span>}
-                {index === 1 && <RiShieldCheckLine size={16} aria-hidden="true" />}
-                {index === 2 && (
-                  <span className="rasa-bolt" aria-hidden="true">
-                    ↯
-                  </span>
-                )}
-                {index === 3 && <RiGlobalLine size={16} aria-hidden="true" />}
-                {item}
-              </span>
+          <ul className="rasa-trust-list">
+            {content.trust.map((item) => (
+              <li key={item}>
+                <RiShieldCheckLine size={16} aria-hidden="true" />
+                <span>{item}</span>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
-
-        <ProductMockup />
-      </header>
-
-      <section className="rasa-section rasa-trust-section" id="security">
-        <span className="rasa-eyebrow">{content.trustTitle}</span>
-        <h2>{content.trustTitle2}</h2>
-        <p className="rasa-section-lead">{content.trustSubtitle}</p>
-        <p className="rasa-section-body">{content.trustText2}</p>
-        <div className="rasa-card-grid rasa-trust-grid">
-          {content.trustCards.map((card, index) => (
-            <article className="rasa-trust-card" key={card.title}>
-              <div className="rasa-trust-card-head">
-                <IconShell index={index} />
-                <h3>{card.title}</h3>
-              </div>
-              <p>{card.text}</p>
-              <ul className="rasa-bullet-list">
-                {card.bullets.map((bullet) => (
-                  <li key={bullet}>
-                    <RiCheckLine size={14} aria-hidden="true" />
-                    <span>{bullet}</span>
-                  </li>
-                ))}
-              </ul>
-            </article>
-          ))}
+        <div className="rasa-hero-visual">
+          <Suspense fallback={<div className="rasa-hero-fallback" aria-hidden="true" />}>
+            <HeroGlobe />
+          </Suspense>
         </div>
       </section>
 
-      <section className="rasa-section rasa-capabilities" id="capabilities">
-        <span className="rasa-eyebrow">{content.capabilitiesEyebrow}</span>
-        <h2>{content.capabilitiesTitle}</h2>
-        <p>{content.capabilitiesText}</p>
-        <div className="rasa-feature-tabs" role="tablist" aria-label={content.capabilitiesTitle}>
-          {content.capabilityGroups.map((group, index) => (
-            <button
-              key={group.title}
-              type="button"
-              role="tab"
-              className={activeTab === index ? 'is-active' : ''}
-              aria-selected={activeTab === index}
-              onClick={() => setActiveTab(index)}
-            >
-              {group.title}
-            </button>
-          ))}
-        </div>
-        <div className="rasa-tab-panels">
-          {content.capabilityGroups.map((group, index) => (
-            <div
-              key={group.title}
-              role="tabpanel"
-              hidden={activeTab !== index}
-              className="rasa-feature-panel"
-            >
-              <div className="rasa-card-grid rasa-feature-grid">
-                {group.items.map((item, itemIndex) => {
-                  const Icon = featureIcons[(index * 6 + itemIndex) % featureIcons.length]
-                  return (
-                    <article className="rasa-feature-card" key={item.title}>
-                      <Icon size={22} aria-hidden="true" />
-                      <div>
-                        <h3>{item.title}</h3>
-                        <p>{item.description}</p>
-                      </div>
-                    </article>
-                  )
-                })}
-              </div>
-            </div>
-          ))}
-        </div>
+      <section className={`rasa-section rasa-scale-section ${visibleSections.includes('scale') ? 'is-visible' : ''}`} id="scale">
+        <ScalePath title={content.scaleTitle} items={content.scaleItems} />
       </section>
 
-      <section className="rasa-tech-trust" id="deployment">
-        <div className="rasa-tech-trust-copy">
-          <span className="rasa-eyebrow">{content.trustTitle2}</span>
-          <h2>{content.trustTitle2}</h2>
-          <p>{content.trustText2}</p>
-        </div>
-        
-        <div className="rasa-badge-row">
-          {content.trustBadges.map((badge, index) => {
-            const Icon = badgeIcons[index % badgeIcons.length]
-            return (
-              <span key={badge}>
-                <Icon size={14} aria-hidden="true" />
-                {badge}
-              </span>
-            )
-          })}
-        </div>
+      <section className={`rasa-section rasa-product-section ${visibleSections.includes('product') ? 'is-visible' : ''}`} id="product">
+        <FeatureOrbit title={content.productTitle} items={content.productItems} />
       </section>
 
-      <section className="rasa-cta" id="pricing">
-        <div className="rasa-cta-copy">
-          <span>{content.ctaReady}</span>
-          <h2>{content.ctaReady}</h2>
-          <p>{content.ctaText}</p>
-        </div>
-        <div className="rasa-cta-actions">
-          <a className="rasa-btn rasa-btn-primary rasa-btn-large" href="/meet">
-            {content.primaryCta}
-            <RiVidiconLine size={19} aria-hidden="true" />
-          </a>
-          <a className="rasa-btn rasa-btn-ghost rasa-btn-large" href="#deployment">
-            {content.secondaryCta}
-            <RiSparklingLine size={18} aria-hidden="true" />
-          </a>
-          <a className="rasa-btn rasa-btn-ghost rasa-btn-large" href="#resources">
-            {content.tertiaryCta}
-            <RiFileTextLine size={18} aria-hidden="true" />
-          </a>
-        </div>
-      </section>
-
-      <footer className="rasa-footer" id="resources">
-        <div className="rasa-footer-inner">
-          <div className="rasa-footer-brand">
-            <a className="rasa-brand rasa-brand-footer" href="/">
-              <img
-                className="rasa-brand-logo"
-                src="rasa/logo-light.png"
-                alt={branding.logoAlt}
-                width="148"
-                height="36"
-                decoding="async"
-              />
-            </a>
-            <p>{content.footerLead}</p>
-          </div>
-          <div className="rasa-footer-columns">
-            {content.footerColumns.map((column) => (
-              <div className="rasa-footer-column" key={column[0]}>
-                <h3>{column[0]}</h3>
-                <div className="rasa-footer-links">
-                  {column.slice(1).map((link) => (
-                    <a href="/" key={link}>
-                      {link}
-                    </a>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="rasa-footer-social">
-            <div>
-              <RiMailFill size={24} aria-hidden="true" />
-              <RiGlobalLine size={24} aria-hidden="true" />
-              <RiGroupLine size={24} aria-hidden="true" />
-            </div>
-            <button className="rasa-country" type="button" aria-label="Country selector">
-              <span aria-hidden="true">🇮🇷</span>
-              {content.country}
-              <RiArrowDownSLine size={16} aria-hidden="true" />
-            </button>
-            <small>© 2025 Rasa. All rights reserved.</small>
-          </div>
-        </div>
-      </footer>
-    </div>
-  )
-}
-
-const IconShell = ({ index }: { index: number }) => {
-  const icons = [RiShieldKeyholeLine, RiSparklingLine, RiServerLine, RiPhoneLine]
-  const Icon = icons[index]
-  return (
-    <div className={`rasa-icon-shell rasa-icon-${index}`}>
-      <Icon size={28} />
-    </div>
-  )
-}
-
-const ProductMockup = () => (
-  <div className="rasa-mockup" aria-label="Rasa meeting interface">
-    <aside className="rasa-chat-panel">
-      <div className="rasa-panel-top">
-        <span aria-hidden="true">☰</span>
-        <strong>پیام‌ها</strong>
-      </div>
-      <div className="rasa-chat-list">
-        <ChatLine name="سارا احمدی" time="10:32" />
-        <ChatLine name="علی مرادی" time="10:35" />
-      </div>
-      <div className="rasa-live-note">
-        <b>رونویسی زنده</b>
-        <p>در این جلسه درباره برنامه تحویل و مسیر استقرار صحبت می‌کنیم.</p>
-      </div>
-      <div className="rasa-rec">
-        <span />
-        در حال ضبط
-        <time>01:22:48</time>
-      </div>
-    </aside>
-    <main className="rasa-video-panel">
-      <div className="rasa-meeting-top">
-        <span>جلسه تیم محصول</span>
-        <b>22:48</b>
-      </div>
-      <div className="rasa-video-grid">
-        <VideoTile name="حسین" tone="warm" large />
-        <VideoTile name="فاطمه" tone="blue" large />
-        <VideoTile name="محمد" tone="cool" />
-        <VideoTile name="نازنین" tone="rose" />
-        <div className="rasa-audio-tile">
-          <RiMicLine size={34} aria-hidden="true" />
-          <span>مهمان</span>
-        </div>
-      </div>
-      <div className="rasa-controls">
-        {[RiMicLine, RiVidiconLine, RiGlobalLine, RiSparklingLine].map((Icon, i) => (
-          <button type="button" key={i}>
-            <Icon size={19} aria-hidden="true" />
-          </button>
-        ))}
-        <button className="rasa-end" type="button">
-          <RiVidiconLine size={18} aria-hidden="true" />
-        </button>
-      </div>
-      <div className="rasa-status">
-        اتصال امن و رمزگذاری‌شده
-        <RiShieldCheckLine size={16} aria-hidden="true" />
-      </div>
-    </main>
-  </div>
-)
-
-const ChatLine = ({ name, time }: { name: string; time: string }) => (
-  <div className="rasa-chat-line">
-    <span />
-    <div>
-      <b>{name}</b>
-      <small>فایل طراحی به اشتراک گذاشته شد</small>
-    </div>
-    <time>{time}</time>
-  </div>
-)
-
-const VideoTile = ({
-  name,
-  tone,
-  large,
-}: {
-  name: string
-  tone: string
-  large?: boolean
-}) => (
-  <div className={`rasa-video-tile rasa-video-${tone} ${large ? 'is-large' : ''}`}>
-    <div className="rasa-avatar-face">
-      <span />
-      <i />
-    </div>
-    <small>{name}</small>
-  </div>
-)
-
-const HeroDecorations = () => {
-  const dots = [
-    { className: 'rasa-dot-dot rasa-dot-a', size: 18 },
-    { className: 'rasa-dot-dot rasa-dot-b', size: 12 },
-    { className: 'rasa-dot-dot rasa-dot-c', size: 24 },
-    { className: 'rasa-dot-dot rasa-dot-d', size: 10 },
-    { className: 'rasa-dot-dot rasa-dot-e', size: 16 },
-    { className: 'rasa-dot-dot rasa-dot-f', size: 14 },
-    { className: 'rasa-dot-dot rasa-dot-g', size: 20 },
-    { className: 'rasa-dot-dot rasa-dot-h', size: 11 },
-  ]
-
-  return (
-    <div className="rasa-hero-decor" aria-hidden="true">
-      <svg
-        className="rasa-hero-lines"
-        viewBox="0 0 1200 780"
-        preserveAspectRatio="none"
-        aria-hidden="true"
-        focusable="false"
-      >
-        <defs>
-          <linearGradient id="rasa-flow" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="rgba(102, 150, 234, 0)" />
-            <stop offset="45%" stopColor="rgba(102, 150, 234, 0.32)" />
-            <stop offset="100%" stopColor="rgba(102, 150, 234, 0)" />
-          </linearGradient>
-        </defs>
-        <path className="rasa-line-arc rasa-line-arc-a" d="M88 228C205 132 343 92 488 126c114 27 171 102 276 121 126 23 245-39 327-131" />
-        <path className="rasa-line-arc rasa-line-arc-b" d="M106 516c130-56 264-40 362 29 89 63 187 99 316 76 121-22 208-90 332-198" />
-        <path className="rasa-line-arc rasa-line-arc-c" d="M158 180c92 21 160 70 231 134 74 67 147 95 238 92 97-3 177-48 255-106 92-68 164-106 286-89" />
-        <circle className="rasa-node rasa-node-a" cx="372" cy="125" r="5" />
-        <circle className="rasa-node rasa-node-b" cx="808" cy="240" r="6" />
-        <circle className="rasa-node rasa-node-c" cx="486" cy="520" r="5" />
-        <circle className="rasa-node rasa-node-d" cx="962" cy="366" r="4" />
-      </svg>
-      {dots.map((dot, index) => (
-        <span
-          key={dot.className}
-          className={dot.className}
-          style={{
-            width: `${dot.size}px`,
-            height: `${dot.size}px`,
-            animationDelay: `${index * 0.42}s`,
-          }}
+      <section className={`rasa-section rasa-infra-section ${visibleSections.includes('security') ? 'is-visible' : ''}`} id="security">
+        <InfrastructureBackbone
+          title={content.infraTitle}
+          subtitle={content.infraSubtitle}
+          metrics={content.metrics}
         />
-      ))}
-    </div>
+      </section>
+
+      <section className={`rasa-section rasa-final-section ${visibleSections.includes('final') ? 'is-visible' : ''}`} id="final">
+        <CommunicationWave />
+        <div className="rasa-final-copy">
+          <p className="rasa-eyebrow">رسا</p>
+          <h2>{content.finalTitle}</h2>
+          <p>{content.finalText}</p>
+          <div className="rasa-hero-actions">
+            <a className="rasa-btn rasa-btn-primary" href="/meet">
+              {content.primary}
+              <RiArrowLeftLine size={18} aria-hidden="true" />
+            </a>
+            <a className="rasa-btn rasa-btn-secondary" href="mailto:sales@rasa.ir">
+              {content.secondary}
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
   )
 }

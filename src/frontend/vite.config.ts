@@ -26,6 +26,7 @@ export default defineConfig(({ mode }) => {
     },
     build: {
       sourcemap: env.VITE_BUILD_SOURCEMAP === 'true',
+      outDir: env.VITE_BUILD_DIR || 'dist-rasa',
     },
     server: {
       port: parseInt(env.VITE_PORT) || 3000,

@@ -1,0 +1,1 @@
+import{t as e}from"./routes-CuR_Mjc-.js";var t=t=>{let n=e[t];if(!n)throw Error(`Route "${t}" does not exist`);return n},n=(e,n)=>{let r=t(e),i=r.to?r.to(n):typeof r.path==`string`?r.path:null;if(!i)throw Error(`Can't find path to navigate to for ${e}`);return i},r=(e,t)=>{let r=n(e,t);return`${window.location.origin}${r}`};export{t as n,r as t};

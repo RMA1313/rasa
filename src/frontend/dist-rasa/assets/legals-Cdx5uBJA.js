@@ -1,0 +1,1 @@
+var e=`اطلاعات حقوقی`,t=`داده‌های شخصی و کوکی‌ها`,n=`دسترسی‌پذیری`,r=`شرایط استفاده`,i=`اطلاعات فنی`,a={title:e,data:t,accessibility:n,termsOfService:r,technicalDetails:i};export{n as accessibility,t as data,a as default,i as technicalDetails,r as termsOfService,e as title};

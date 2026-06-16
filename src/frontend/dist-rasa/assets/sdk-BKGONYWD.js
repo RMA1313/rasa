@@ -1,0 +1,1 @@
+var e={createButton:`Create`,joinButton:`Join with Visio`,copyLinkTooltip:`Copy link`,resetLabel:`Reset`,participantLimit:`Up to 150 participants.`,popupBlocked:`Popup was blocked. Please allow popups for this site.`},t={createMeeting:e};export{e as createMeeting,t as default};

@@ -1,0 +1,1 @@
+var e=`ضبط`,t=`دانلود ضبط`,n=`شما اجازه دسترسی به این ضبط را ندارید`,r=`در حال پردازش…`,i=`آماده`,a={title:e,download:t,noAccess:n,processing:r,ready:i};export{a as default,t as download,n as noAccess,r as processing,i as ready,e as title};

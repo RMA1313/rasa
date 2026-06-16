@@ -1,0 +1,1 @@
+var e=`SDK`,t=`مستندات و ابزارهای SDK برای یکپارچه‌سازی`,n={title:`SDK`,description:t};export{n as default,t as description,e as title};

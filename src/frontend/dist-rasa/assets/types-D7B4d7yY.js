@@ -1,0 +1,1 @@
+var e=function(e){return e.ROOM_CREATED=`ROOM_CREATED`,e.STATE_CLEAR=`STATE_CLEAR`,e}({}),t=function(e){return e[e.CALLBACK_ID=0]=`CALLBACK_ID`,e[e.ROOM_DATA=1]=`ROOM_DATA`,e}({});export{t as n,e as t};

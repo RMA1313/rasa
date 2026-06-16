@@ -1,0 +1,1 @@
+var e=`اعلان‌ها`,t=`شما به جلسه پیوستید`,n=`شما از جلسه خارج شدید`,r=`میکروفون شما بی‌صدا شد`,i=`میکروفون شما فعال شد`,a=`دست شما بالا رفت`,o=`دست شما پایین آورده شد`,s={title:e,joined:t,left:n,muted:r,unmuted:i,raised:a,lowered:o};export{s as default,t as joined,n as left,o as lowered,r as muted,a as raised,e as title,i as unmuted};

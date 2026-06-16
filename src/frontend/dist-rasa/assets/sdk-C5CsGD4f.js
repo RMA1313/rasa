@@ -1,0 +1,1 @@
+var e={createButton:`Aanmaken`,joinButton:`Deelnemen met Visio`,copyLinkTooltip:`Link kopiëren`,resetLabel:`Resetten`,participantLimit:`Tot 150 deelnemers.`,popupBlocked:`Pop-up werd geblokkeerd. Sta pop-ups toe voor deze site.`},t={createMeeting:e};export{e as createMeeting,t as default};

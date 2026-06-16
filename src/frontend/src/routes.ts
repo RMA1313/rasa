@@ -37,7 +37,7 @@ export const routes: Record<
   {
     name: RouteName
     path: RegExp | string
-    Component: LazyExoticComponent<ComponentType>
+    Component: ComponentType | LazyExoticComponent<ComponentType>
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     to?: (...args: any[]) => string | URL
   }

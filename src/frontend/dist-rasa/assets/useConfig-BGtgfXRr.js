@@ -1,0 +1,1 @@
+import{a as e,i as t,t as n}from"./fetchApi-DD4pN336.js";var r=()=>n(`config/`),i=()=>e({queryKey:[t.config],queryFn:r,staleTime:1/0});export{i as t};
